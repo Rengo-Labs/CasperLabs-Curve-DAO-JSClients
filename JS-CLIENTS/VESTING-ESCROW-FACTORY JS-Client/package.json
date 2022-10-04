@@ -1,0 +1,136 @@
+{
+  "name": "VESTINGESCROWFACTORY-JsClients",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deployVestingEscrowFactory": "ts-node VESTINGESCROWFACTORY/scripts/deployVestingEscrowFactory.ts",
+    "adminVef": "ts-node VESTINGESCROWFACTORY/scripts/adminVef.ts",
+    "applyTransferOwnershipSessionCode": "ts-node VESTINGESCROWFACTORY/scripts/applyTransferOwnershipSessionCode.ts",
+    "applyTransferOwnershipVef": "ts-node VESTINGESCROWFACTORY/scripts/applyTransferOwnershipVef.ts",
+    "balanceOfSessionCode": "ts-node VESTINGESCROWFACTORY/scripts/balanceOfSessionCode.ts",
+    "claim": "ts-node VESTINGESCROWFACTORY/scripts/claim.ts",
+    "commitTransferOwnershipSessionCode": "ts-node VESTINGESCROWFACTORY/scripts/commitTransferOwnershipSessionCode.ts",
+    "commitTransferOwnershipVef": "ts-node VESTINGESCROWFACTORY/scripts/commitTransferOwnershipVef.ts",
+    "disableCanDisable": "ts-node VESTINGESCROWFACTORY/scripts/disableCanDisable.ts",
+    "futureAdminVef": "ts-node VESTINGESCROWFACTORY/scripts/futureAdminVef.ts",
+    "initialize": "ts-node VESTINGESCROWFACTORY/scripts/initialize.ts",
+    "lockedOfSessionCode": "ts-node VESTINGESCROWFACTORY/scripts/lockedOfSessionCode.ts",
+    "lockedSupplySessionCode": "ts-node VESTINGESCROWFACTORY/scripts/lockedSupplySessionCode.ts",
+    "packageHash": "ts-node VESTINGESCROWFACTORY/scripts/packageHash.ts",
+    "target": "ts-node VESTINGESCROWFACTORY/scripts/target.ts",
+    "toggleDisable": "ts-node VESTINGESCROWFACTORY/scripts/toggleDisable.ts",
+    "vestedOfSessionCode": "ts-node VESTINGESCROWFACTORY/scripts/vestedOfSessionCode.ts",
+    "vestedSupplySessionCode": "ts-node VESTINGESCROWFACTORY/scripts/vestedSupplySessionCode.ts",
+    "VestingContract": "ts-node VESTINGESCROWFACTORY/scripts/VestingContract.ts"
+  },
+  "Script deployVestingEscrowFactory comments": {
+    "Description" : "use it to deploy vesting escorw factory",
+    "Syntax" : "npm run deployVestingEscrowFactory <tokenPackageHash>",
+    "Example" : "npm run deployVestingEscrowFactory 267c011232d1c8d113474b20047f2aabd8d0a704ca9b34dad62cd8372c7a4790"
+  },
+  "Script adminVef comments": {
+    "Description" : "use it to get adminVef",
+    "Syntax" : "npm run adminVef",
+    "Example" : "npm run adminVef"
+  },
+  "Script applyTransferOwnershipSessionCode comments": {
+    "Description" : "use it to get apply Transfer Ownership through SessionCode",
+    "Syntax" : "npm run applyTransferOwnershipSessionCode",
+    "Example" : "npm run applyTransferOwnershipSessionCode"
+  },
+  "Script applyTransferOwnershipVef comments": {
+    "Description" : "use it to apply Transfer Ownership",
+    "Syntax" : "npm run applyTransferOwnershipVef",
+    "Example" : "npm run applyTransferOwnershipVef"
+  },
+  "Script balanceOfSessionCode comments": {
+    "Description" : "use it to get balanceOf through SessionCode",
+    "Syntax" : "npm run balanceOfSessionCode <recipientAccountHash>",
+    "Example" : "npm run balanceOfSessionCode 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script claim comments": {
+    "Description" : "use it to claim",
+    "Syntax" : "npm run claim",
+    "Example" : "npm run claim"
+  },
+  "Script commitTransferOwnershipSessionCode comments": {
+    "Description" : "use it to get commit Transfer Ownership through SessionCode",
+    "Syntax" : "npm run commitTransferOwnershipSessionCode <address>",
+    "Example" : "npm run commitTransferOwnershipSessionCode 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script commitTransferOwnershipVef comments": {
+    "Description" : "use it to commit Transfer Ownership",
+    "Syntax" : "npm run commitTransferOwnershipVef",
+    "Example" : "npm run commitTransferOwnershipVef"
+  },
+  "Script disableCanDisable comments": {
+    "Description" : "use it to run disableCanDisable function",
+    "Syntax" : "npm run disableCanDisable",
+    "Example" : "npm run disableCanDisable"
+  },
+  "Script futureAdminVef comments": {
+    "Description" : "use it to get futureAdminVef",
+    "Syntax" : "npm run futureAdminVef",
+    "Example" : "npm run futureAdminVef"
+  },
+  "Script initialize comments": {
+    "Description" : "use it to call initialize function",
+    "Syntax" : "npm run initialize <token> <recipient> <amount> <startTime> <endTime>",
+    "Example" : "npm run initialize 4af852da890104582a535d90ea369a5b9a1bb1fcc19874fdaf9f8f6dc4abedae 4af852da890104582a535d90ea369a5b9a1bb1fcc19874fdaf9f8f6dc4abedae 10 10000 100001"
+  },
+  "Script lockedOfSessionCode comments": {
+    "Description" : "use it to get lockedOf through SessionCode",
+    "Syntax" : "npm run lockedOfSessionCode <recipientAccountHash>",
+    "Example" : "npm run lockedOfSessionCode 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script lockedSupplySessionCode comments": {
+    "Description" : "use it to get locked supply through SessionCode",
+    "Syntax" : "npm run lockedSupplySessionCode",
+    "Example" : "npm run lockedSupplySessionCode"
+  },
+  "Script packageHash comments": {
+    "Description" : "use it to get packageHash",
+    "Syntax" : "npm run packageHash",
+    "Example" : "npm run packageHash"
+  },
+  "Script target comments": {
+    "Description" : "use it to get target",
+    "Syntax" : "npm run target",
+    "Example" : "npm run target"
+  },
+  "Script toggleDisable comments": {
+    "Description" : "use it to toggle Disable",
+    "Syntax" : "npm run toggleDisable <recipient>",
+    "Example" : "npm run toggleDisable 4af852da890104582a535d90ea369a5b9a1bb1fcc19874fdaf9f8f6dc4abedae"
+  },
+  "Script vestedOfSessionCode comments": {
+    "Description" : "use it to get vestedOf through SessionCode",
+    "Syntax" : "npm run vestedOfSessionCode <recipientAccountHash>",
+    "Example" : "npm run vestedOfSessionCode 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script vestedSupplySessionCode comments": {
+    "Description" : "use it to get vested supply through SessionCode",
+    "Syntax" : "npm run vestedSupplySessionCode",
+    "Example" : "npm run vestedSupplySessionCode"
+  },
+  "Script VestingContract comments": {
+    "Description" : "use it to call deploy vesting escrow simple function",
+    "Syntax" : "npm run VestingContract <token> <amount> <duration> <start>",
+    "Example" : "npm run VestingContract 4af852da890104582a535d90ea369a5b9a1bb1fcc19874fdaf9f8f6dc4abedae 10 20304001 100000"
+  },
+
+  "dependencies": {
+    "axios": "^0.24.0",
+    "blakejs": "^1.1.1",
+    "casper-js-sdk": "^2.7.5",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.1.0",
+    "ts-results": "^3.3.0",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "name": "LIQUIDITYGAUGEREWARD-JsClients",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deployLiquidityGaugeReward": "ts-node LIQUIDITYGAUGEREWARD/script/deployLiquidityGaugeReward.ts",
+    "applyTransferOwnership": "ts-node LIQUIDITYGAUGEREWARD/script/applyTransferOwnership.ts",
+    "claimableRewardSessionCode": "ts-node LIQUIDITYGAUGEREWARD/script/claimableRewardSessionCode.ts",
+    "claimableTokensSessionCode": "ts-node LIQUIDITYGAUGEREWARD/script/claimableTokensSessionCode.ts",
+    "claimRewards": "ts-node LIQUIDITYGAUGEREWARD/script/claimRewards.ts",
+    "comitTransferOwnership": "ts-node LIQUIDITYGAUGEREWARD/script/comitTransferOwnership.ts",
+    "deposit": "ts-node LIQUIDITYGAUGEREWARD/script/deposit.ts",
+    "integrateCheckpointSessionCode": "ts-node LIQUIDITYGAUGEREWARD/script/integrateCheckpointSessionCode.ts",
+    "kick": "ts-node LIQUIDITYGAUGEREWARD/script/kick.ts",
+    "killMe": "ts-node LIQUIDITYGAUGEREWARD/script/killMe.ts",
+    "setApproveDeposit": "ts-node LIQUIDITYGAUGEREWARD/script/setApproveDeposit.ts",
+    "toggleExternalRewardsClaim": "ts-node LIQUIDITYGAUGEREWARD/script/toggleExternalRewardsClaim.ts",
+    "userCheckpointSessionCode": "ts-node LIQUIDITYGAUGEREWARD/script/userCheckpointSessionCode.ts",
+    "withdraw": "ts-node LIQUIDITYGAUGEREWARD/script/withdraw.ts"
+  },
+  "Script deployLiquidityGaugeReward comments": {
+    "Description" : "use it to deploy erc20Crv",
+    "Syntax" : "npm run deployLiquidityGaugeReward <lpAddress> <minter> <rewardContract> <rewardToken>",
+    "Example" : "npm run deployLiquidityGaugeReward 267c011232d1c8d113474b20047f2aabd8d0a704ca9b34dad62cd8372c7a4790 267c011232d1c8d113474b20047f2aabd8d0a704ca9b34dad62cd8372c7a4790 267c011232d1c8d113474b20047f2aabd8d0a704ca9b34dad62cd8372c7a4790 267c011232d1c8d113474b20047f2aabd8d0a704ca9b34dad62cd8372c7a4790"
+  },
+  "Script withdraw comments": {
+    "Description" : "use it to withdraw value",
+    "Syntax" : "npm run withdraw <value>",
+    "Example" : "npm run withdraw 100"
+  },
+  "Script userCheckpointSessionCode comments": {
+    "Description" : "use it to call userCheckpointSessionCode through session code",
+    "Syntax" : "npm run userCheckpointSessionCode",
+    "Example" : "npm run userCheckpointSessionCode"
+  },
+  "Script toggleExternalRewardsClaim comments": {
+    "Description" : "use it to toggle external rewards claim",
+    "Syntax" : "npm run toggleExternalRewardsClaim",
+    "Example" : "npm run toggleExternalRewardsClaim"
+  },
+  "Script setApproveDeposit comments": {
+    "Description" : "use it to approve deposit",
+    "Syntax" : "npm run setApproveDeposit",
+    "Example" : "npm run setApproveDeposit"
+  },
+  "Script killMe comments": {
+    "Description" : "use it to call killMe function",
+    "Syntax" : "npm run killMe",
+    "Example" : "npm run killMe"
+  },
+  "Script kick comments": {
+    "Description" : "use it to call kick function",
+    "Syntax" : "npm run kick",
+    "Example" : "npm run kick"
+  },
+  "Script integrateCheckpointSessionCode comments": {
+    "Description" : "use it to call integrateCheckpointSessionCode through session code",
+    "Syntax" : "npm run integrateCheckpointSessionCode",
+    "Example" : "npm run integrateCheckpointSessionCode"
+  },
+  "Script deposit comments": {
+    "Description" : "use it to deposit",
+    "Syntax" : "npm run deposit <value>",
+    "Example" : "npm run deposit 100"
+  },
+  "Script comitTransferOwnership comments": {
+    "Description" : "use it to comit transfer ownership",
+    "Syntax" : "npm run comitTransferOwnership",
+    "Example" : "npm run comitTransferOwnership"
+  },
+  "Script claimRewards comments": {
+    "Description" : "use it to claim rewards",
+    "Syntax" : "npm run claimRewards",
+    "Example" : "npm run claimRewards"
+  },
+  "Script claimableTokensSessionCode comments": {
+    "Description" : "use it to call claimableTokensSessionCode through session code",
+    "Syntax" : "npm run claimableTokensSessionCode",
+    "Example" : "npm run claimableTokensSessionCode"
+  },
+  "Script claimableRewardSessionCode comments": {
+    "Description" : "use it to call claimableRewardSessionCode through session code",
+    "Syntax" : "npm run claimableRewardSessionCode",
+    "Example" : "npm run claimableRewardSessionCode"
+  },
+  "Script applyTransferOwnership comments": {
+    "Description" : "use it to apply transfer ownership",
+    "Syntax" : "npm run applyTransferOwnership",
+    "Example" : "npm run applyTransferOwnership"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "blakejs": "^1.1.1",
+    "casper-js-sdk": "^2.7.5",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.1.0",
+    "ts-results": "^3.3.0",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3"
+  }
+}

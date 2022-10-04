@@ -1,0 +1,159 @@
+{
+  "name": "LIQUIDITYGAUGEV3-JsClients",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deployliquidityGaugeV3": "ts-node LIQUIDITYGAUGEV3/scripts/deployliquidityGaugeV3.ts",
+    "acceptTransferOwnership": "ts-node LIQUIDITYGAUGEV3/scripts/acceptTransferOwnership.ts",
+    "approve": "ts-node LIQUIDITYGAUGEV3/scripts/approve.ts",
+    "claimableRewardSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/claimableRewardSessionCode.ts",
+    "claimableRewardWriteSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/claimableRewardWriteSessionCode.ts",
+    "claimableTokensSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/claimableTokensSessionCode.ts",
+    "claimedReward": "ts-node LIQUIDITYGAUGEV3/scripts/claimedReward.ts",
+    "comitTransferOwnership": "ts-node LIQUIDITYGAUGEV3/scripts/comitTransferOwnership.ts",
+    "decimals": "ts-node LIQUIDITYGAUGEV3/scripts/decimals.ts",
+    "decreaseAllowance": "ts-node LIQUIDITYGAUGEV3/scripts/decreaseAllowance.ts",
+    "deposit": "ts-node LIQUIDITYGAUGEV3/scripts/deposit.ts",
+    "increaseAllowance": "ts-node LIQUIDITYGAUGEV3/scripts/increaseAllowance.ts",
+    "integrateCheckpoint": "ts-node LIQUIDITYGAUGEV3/scripts/integrateCheckpoint.ts",
+    "kick": "ts-node LIQUIDITYGAUGEV3/scripts/kick.ts",
+    "lastClaimSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/lastClaimSessionCode.ts",
+    "rewardContractSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/rewardContractSessionCode.ts",
+    "setKilled": "ts-node LIQUIDITYGAUGEV3/scripts/setKilled.ts",
+    "setRewards": "ts-node LIQUIDITYGAUGEV3/scripts/setRewards.ts",
+    "setRewardsReceiver": "ts-node LIQUIDITYGAUGEV3/scripts/setRewardsReceiver.ts",
+    "transferFromSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/transferFromSessionCode.ts",
+    "transferSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/transferSessionCode.ts",
+    "userCheckpointSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/userCheckpointSessionCode.ts",
+    "withdraw": "ts-node LIQUIDITYGAUGEV3/scripts/withdraw.ts"
+  },
+  "Script deployliquidityGaugeV3 comments": {
+    "Description" : "use it to deploy liquidity gauge v3",
+    "Syntax" : "npm run deployliquidityGaugeV3 <lpAddress> <minter>",
+    "Example" : "npm run deployliquidityGaugeV3 267c011232d1c8d113474b20047f2aabd8d0a704ca9b34dad62cd8372c7a4790 267c011232d1c8d113474b20047f2aabd8d0a704ca9b34dad62cd8372c7a4790"
+  },
+  "Script withdraw comments": {
+    "Description" : "use it to withdraw value",
+    "Syntax" : "npm run withdraw <value>",
+    "Example" : "npm run withdraw 10"
+  },
+  "Script userCheckpointSessionCode comments": {
+    "Description" : "use it to call userCheckpointSessionCode through session code",
+    "Syntax" : "npm run userCheckpointSessionCode",
+    "Example" : "npm run userCheckpointSessionCode"
+  },
+  "Script transferSessionCode comments": {
+    "Description" : "use it to call transferSessionCode through session code",
+    "Syntax" : "npm run transferSessionCode <recipientAccountHahs> <amount>",
+    "Example" : "npm run transferSessionCode 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 10"
+  },
+  "Script transferFromSessionCode comments": {
+    "Description" : "use it to call transferFromSessionCode through session code",
+    "Syntax" : "npm run transferFromSessionCode <recipientAccountHahs> <amount>",
+    "Example" : "npm run transferFromSessionCode 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 10"
+  },
+  "Script setRewardsReceiver comments": {
+    "Description" : "use it to set Rewards Receiver",
+    "Syntax" : "npm run setRewardsReceiver <receiver>",
+    "Example" : "npm run setRewardsReceiver 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script setRewards comments": {
+    "Description" : "use it to set Rewards",
+    "Syntax" : "npm run setRewards <rewardContract> <claimSig> <rewardTokens>",
+    "Example" : "npm run setRewards 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 claim 2 "
+  },
+  "Script setKilled comments": {
+    "Description" : "use it to set Killed",
+    "Syntax" : "npm run setKilled",
+    "Example" : "npm run setKilled"
+  },
+  "Script rewardContractSessionCode comments": {
+    "Description" : "use it to call rewardContractSessionCode through session code",
+    "Syntax" : "npm run rewardContractSessionCode",
+    "Example" : "npm run rewardContractSessionCode"
+  },
+  "Script lastClaimSessionCode comments": {
+    "Description" : "use it to call lastClaimSessionCode through session code",
+    "Syntax" : "npm run lastClaimSessionCode",
+    "Example" : "npm run lastClaimSessionCode"
+  },
+  "Script kick comments": {
+    "Description" : "use it to kick",
+    "Syntax" : "npm run kick",
+    "Example" : "npm run kick"
+  },
+  "Script integrateCheckpoint comments": {
+    "Description" : "use it to get integrateCheckpoint",
+    "Syntax" : "npm run integrateCheckpoint",
+    "Example" : "npm run integrateCheckpoint"
+  },
+  "Script increaseAllowance comments": {
+    "Description" : "use it to increase Allowance",
+    "Syntax" : "npm run increaseAllowance <spender> <amount>",
+    "Example" : "npm run increaseAllowance 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 10"
+  },
+  "Script deposit comments": {
+    "Description" : "use it to deposit value",
+    "Syntax" : "npm run deposit <value>",
+    "Example" : "npm run deposit 10"
+  },
+  "Script decreaseAllowance comments": {
+    "Description" : "use it to decrease Allowance",
+    "Syntax" : "npm run decreaseAllowance <spender> <amount>",
+    "Example" : "npm run decreaseAllowance 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 10"
+  },
+  "Script decimals comments": {
+    "Description" : "use it to get decimals",
+    "Syntax" : "npm run decimals",
+    "Example" : "npm run decimals"
+  },
+  "Script comitTransferOwnership comments": {
+    "Description" : "use it to commit Transfer Ownership",
+    "Syntax" : "npm run comitTransferOwnership",
+    "Example" : "npm run comitTransferOwnership"
+  },
+  "Script claimedReward comments": {
+    "Description" : "use it to claimed Reward",
+    "Syntax" : "npm run claimedReward <addr> <token>",
+    "Example" : "npm run claimedReward 4af852da890104582a535d90ea369a5b9a1bb1fcc19874fdaf9f8f6dc4abedae 4af852da890104582a535d90ea369a5b9a1bb1fcc19874fdaf9f8f6dc4abedae"
+  },
+  "Script claimableTokensSessionCode comments": {
+    "Description" : "use it to call claimableTokensSessionCode through session code",
+    "Syntax" : "npm run claimableTokensSessionCode <addr>",
+    "Example" : "npm run claimableTokensSessionCode 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script claimableRewardWriteSessionCode comments": {
+    "Description" : "use it to call claimableRewardWriteSessionCode through session code",
+    "Syntax" : "npm run claimableRewardWriteSessionCode <token>",
+    "Example" : "npm run claimableRewardWriteSessionCode 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script claimableRewardSessionCode comments": {
+    "Description" : "use it to call claimableRewardSessionCode through session code",
+    "Syntax" : "npm run claimableRewardSessionCode <token>",
+    "Example" : "npm run claimableRewardSessionCode 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script approve comments": {
+    "Description" : "use it to approve",
+    "Syntax" : "npm run approve <spender> <amount>",
+    "Example" : "npm run approve 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 10"
+  },
+  "Script acceptTransferOwnership comments": {
+    "Description" : "use it to accept Transfer Ownership",
+    "Syntax" : "npm run acceptTransferOwnership",
+    "Example" : "npm run acceptTransferOwnership"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "blakejs": "^1.1.1",
+    "casper-js-sdk": "^2.7.5",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.1.0",
+    "ts-results": "^3.3.0",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3"
+  }
+}

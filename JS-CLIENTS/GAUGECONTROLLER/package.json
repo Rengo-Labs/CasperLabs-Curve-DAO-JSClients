@@ -1,0 +1,269 @@
+{
+  "name": "GAUGECONTROLLER-JsClients",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deployGaugeController": "ts-node GAUGECONTROLLER/scripts/deployGaugeController.ts",
+    "addGauge": "ts-node GAUGECONTROLLER/scripts/addGauge.ts",
+    "addType": "ts-node GAUGECONTROLLER/scripts/addType.ts",
+    "admin": "ts-node GAUGECONTROLLER/scripts/admin.ts",
+    "applyTransferOwnership": "ts-node GAUGECONTROLLER/scripts/applyTransferOwnership.ts",
+    "changeGaugeWeight": "ts-node GAUGECONTROLLER/scripts/changeGaugeWeight.ts",
+    "changesSum": "ts-node GAUGECONTROLLER/scripts/changesSum.ts",
+    "changesWeight": "ts-node GAUGECONTROLLER/scripts/changesWeight.ts",
+    "changeTypeWeight": "ts-node GAUGECONTROLLER/scripts/changeTypeWeight.ts",
+    "checkpoint": "ts-node GAUGECONTROLLER/scripts/checkpoint.ts",
+    "checkpointGauge": "ts-node GAUGECONTROLLER/scripts/checkpointGauge.ts",
+    "commitTransferOwnership": "ts-node GAUGECONTROLLER/scripts/commitTransferOwnership.ts",
+    "futureAdmin": "ts-node GAUGECONTROLLER/scripts/futureAdmin.ts",
+    "gaugeRelativeWeight": "ts-node GAUGECONTROLLER/scripts/gaugeRelativeWeight.ts",
+    "gaugeRelativeWeightWrite": "ts-node GAUGECONTROLLER/scripts/gaugeRelativeWeightWrite.ts",
+    "gauges": "ts-node GAUGECONTROLLER/scripts/gauges.ts",
+    "gaugeTypeNames": "ts-node GAUGECONTROLLER/scripts/gaugeTypeNames.ts",
+    "gaugeTypes": "ts-node GAUGECONTROLLER/scripts/gaugeTypes.ts",
+    "getGaugeWeight": "ts-node GAUGECONTROLLER/scripts/getGaugeWeight.ts",
+    "getHash": "ts-node GAUGECONTROLLER/scripts/getHash.ts",
+    "getTotalWeight": "ts-node GAUGECONTROLLER/scripts/getTotalWeight.ts",
+    "getTypeWeight": "ts-node GAUGECONTROLLER/scripts/getTypeWeight.ts",
+    "getWeightsSumPerType": "ts-node GAUGECONTROLLER/scripts/getWeightsSumPerType.ts",
+    "lastUserVote": "ts-node GAUGECONTROLLER/scripts/lastUserVote.ts",
+    "nGauges": "ts-node GAUGECONTROLLER/scripts/nGauges.ts",
+    "nGaugeTypes": "ts-node GAUGECONTROLLER/scripts/nGaugeTypes.ts",
+    "packageHash": "ts-node GAUGECONTROLLER/scripts/packageHash.ts",
+    "pointsSum": "ts-node GAUGECONTROLLER/scripts/pointsSum.ts",
+    "pointsTotal": "ts-node GAUGECONTROLLER/scripts/pointsTotal.ts",
+    "pointsTypeWeight": "ts-node GAUGECONTROLLER/scripts/pointsTypeWeight.ts",
+    "pointsweight": "ts-node GAUGECONTROLLER/scripts/pointsweight.ts",
+    "rewardCount": "ts-node GAUGECONTROLLER/scripts/rewardCount.ts",
+    "timeSum": "ts-node GAUGECONTROLLER/scripts/timeSum.ts",
+    "timeTotal": "ts-node GAUGECONTROLLER/scripts/timeTotal.ts",
+    "timeTypeWeight": "ts-node GAUGECONTROLLER/scripts/timeTypeWeight.ts",
+    "timeWeight": "ts-node GAUGECONTROLLER/scripts/timeWeight.ts",
+    "token": "ts-node GAUGECONTROLLER/scripts/token.ts",
+    "voteForGaugeWeights": "ts-node GAUGECONTROLLER/scripts/voteForGaugeWeights.ts",
+    "voteUserPower": "ts-node GAUGECONTROLLER/scripts/voteUserPower.ts",
+    "voteUserSlopes": "ts-node GAUGECONTROLLER/scripts/voteUserSlopes.ts",
+    "votingEscrow": "ts-node GAUGECONTROLLER/scripts/votingEscrow.ts"
+    
+  },
+  "Script deployGaugeController comments": {
+    "Description" : "use it to deploy GaugeController",
+    "Syntax" : "npm run deployGaugeController <token> <votingEscrowPackageHash>",
+    "Example" : "npm run deployGaugeController 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script votingEscrow comments": {
+    "Description" : "use it to get voting Escrow",
+    "Syntax" : "npm run votingEscrow",
+    "Example" : "npm run votingEscrow"
+  },
+  "Script voteUserSlopes comments": {
+    "Description" : "use it to get vote User Slopes",
+    "Syntax" : "npm run voteUserSlopes <spender>",
+    "Example" : "npm run voteUserSlopes 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+  "Script voteUserPower comments": {
+    "Description" : "use it to get vote User Power",
+    "Syntax" : "npm run voteUserPower <owner>",
+    "Example" : "npm run voteUserPower 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+  "Script voteForGaugeWeights comments": {
+    "Description" : "use it to vote For Gauge Weights",
+    "Syntax" : "npm run voteForGaugeWeights <name> <weight>",
+    "Example" : "npm run voteForGaugeWeights 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 0"
+  },
+  "Script token comments": {
+    "Description" : "use it to get token",
+    "Syntax" : "npm run token",
+    "Example" : "npm run token"
+  },
+  "Script timeWeight comments": {
+    "Description" : "use it to get time Weight",
+    "Syntax" : "npm run timeWeight <spender>",
+    "Example" : "npm run timeWeight 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+  "Script timeTypeWeight comments": {
+    "Description" : "use it to get time Type Weight",
+    "Syntax" : "npm run timeTypeWeight <owner>",
+    "Example" : "npm run timeTypeWeight 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+  "Script timeTotal comments": {
+    "Description" : "use it to get time Total",
+    "Syntax" : "npm run timeTotal",
+    "Example" : "npm run timeTotal"
+  },
+  "Script timeSum comments": {
+    "Description" : "use it to get time Sum",
+    "Syntax" : "npm run timeSum <owner>",
+    "Example" : "npm run timeSum 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+  "Script rewardCount comments": {
+    "Description" : "use it to get reward Count",
+    "Syntax" : "npm run rewardCount",
+    "Example" : "npm run rewardCount"
+  },
+  "Script pointsweight comments": {
+    "Description" : "use it to get points weight",
+    "Syntax" : "npm run pointsweight <spender>",
+    "Example" : "npm run pointsweight 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+  "Script pointsTypeWeight comments": {
+    "Description" : "use it to get points Type Weight",
+    "Syntax" : "npm run pointsTypeWeight <spender>",
+    "Example" : "npm run pointsTypeWeight 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+  "Script pointsTotal comments": {
+    "Description" : "use it to get pointsTotal",
+    "Syntax" : "npm run pointsTotal <owner>",
+    "Example" : "npm run pointsTotal 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+  "Script pointsSum comments": {
+    "Description" : "use it to get points Sum",
+    "Syntax" : "npm run pointsSum <spender>",
+    "Example" : "npm run pointsSum 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+  "Script packageHash comments": {
+    "Description" : "use it to get package Hash",
+    "Syntax" : "npm run packageHash",
+    "Example" : "npm run packageHash"
+  },
+  "Script nGaugeTypes comments": {
+    "Description" : "use it to get nGauge Types",
+    "Syntax" : "npm run nGaugeTypes",
+    "Example" : "npm run nGaugeTypes"
+  },
+  "Script nGauges comments": {
+    "Description" : "use it to get nGauges",
+    "Syntax" : "npm run nGauges",
+    "Example" : "npm run nGauges"
+  },
+  "Script lastUserVote comments": {
+    "Description" : "use it to get lastUserVote",
+    "Syntax" : "npm run lastUserVote <spender>",
+    "Example" : "npm run lastUserVote 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+  "Script getWeightsSumPerType comments": {
+    "Description" : "use it to call getWeightsSumPerType through session code",
+    "Syntax" : "npm run getWeightsSumPerType <tokenId>",
+    "Example" : "npm run getWeightsSumPerType 1"
+  },
+  "Script getTypeWeight comments": {
+    "Description" : "use it to call getTypeWeight through session code",
+    "Syntax" : "npm run getTypeWeight <tokenId>",
+    "Example" : "npm run getTypeWeight 1"
+  },
+  "Script getTotalWeight comments": {
+    "Description" : "use it to call getTotalWeight through session code",
+    "Syntax" : "npm run getTotalWeight",
+    "Example" : "npm run getTotalWeight"
+  },
+  "Script getHash comments": {
+    "Description" : "use it to get getHash",
+    "Syntax" : "npm run getHash",
+    "Example" : "npm run getHash"
+  },
+  "Script getGaugeWeight comments": {
+    "Description" : "use it to call getGaugeWeight through session code",
+    "Syntax" : "npm run getGaugeWeight <address>",
+    "Example" : "npm run getGaugeWeight 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script gaugeTypes comments": {
+    "Description" : "use it to call gaugeTypes through session code",
+    "Syntax" : "npm run gaugeTypes <address>",
+    "Example" : "npm run gaugeTypes 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script gaugeTypeNames comments": {
+    "Description" : "use it to get gauge Type Names",
+    "Syntax" : "npm run gaugeTypeNames <owner>",
+    "Example" : "npm run gaugeTypeNames 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+  "Script gauges comments": {
+    "Description" : "use it to get gauges",
+    "Syntax" : "npm run gauges <spender>",
+    "Example" : "npm run gauges 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+},
+  "Script gaugeRelativeWeightWrite comments": {
+    "Description" : "use it to call gaugeRelativeWeightWrite through session code",
+    "Syntax" : "npm run gaugeRelativeWeightWrite <address>",
+    "Example" : "npm run gaugeRelativeWeightWrite 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script gaugeRelativeWeight comments": {
+    "Description" : "use it to call gaugeRelativeWeight through session code",
+    "Syntax" : "npm run gaugeRelativeWeight <address>",
+    "Example" : "npm run gaugeRelativeWeight 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script futureAdmin comments": {
+    "Description" : "use it to get future Admin",
+    "Syntax" : "npm run futureAdmin",
+    "Example" : "npm run futureAdmin"
+  },
+  "Script commitTransferOwnership comments": {
+    "Description" : "use it to commit transfer ownership",
+    "Syntax" : "npm run commitTransferOwnership <address>",
+    "Example" : "npm run commitTransferOwnership 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script checkpointGauge comments": {
+    "Description" : "use it to run checkpointGauge",
+    "Syntax" : "npm run checkpointGauge <address>",
+    "Example" : "npm run checkpointGauge 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script checkpoint comments": {
+    "Description" : "use it to run checkpoint function",
+    "Syntax" : "npm run checkpoint",
+    "Example" : "npm run checkpoint"
+  },
+  "Script changeTypeWeight comments": {
+    "Description" : "use it to  change type weight",
+    "Syntax" : "npm run changeTypeWeight <typeId> <weight>",
+    "Example" : "npm run changeTypeWeight 1 2"
+  },
+  "Script changesWeight comments": {
+    "Description" : "use it to get changes Weight",
+    "Syntax" : "npm run changesWeight <spender>",
+    "Example" : "npm run changesWeight 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+
+  "Script changesSum comments": {
+    "Description" : "use it to get changesSum",
+    "Syntax" : "npm run changesSum <spender>",
+    "Example" : "npm run changesSum 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+  "Script changeGaugeWeight comments": {
+    "Description" : "use it to  change gauge weight",
+    "Syntax" : "npm run changeGaugeWeight <address> <weight>",
+    "Example" : "npm run changeGaugeWeight 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 2"
+  },
+  "Script applyTransferOwnership comments": {
+    "Description" : "use it to apply transfer ownership",
+    "Syntax" : "npm run applyTransferOwnership",
+    "Example" : "npm run applyTransferOwnership"
+  },
+  "Script admin comments": {
+    "Description" : "use it to get admin",
+    "Syntax" : "npm run admin",
+    "Example" : "npm run admin"
+  },
+  "Script addType comments": {
+    "Description" : "use it to add type",
+    "Syntax" : "npm run addType <name> <weight>",
+    "Example" : "npm run addType name 2"
+  },
+  "Script addGauge comments": {
+    "Description" : "use it to  add gauge",
+    "Syntax" : "npm run addGauge <address> <gaugeType> <weight>",
+    "Example" : "npm run addGauge 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 0 2"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "blakejs": "^1.1.1",
+    "casper-js-sdk": "^2.7.5",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.1.0",
+    "ts-results": "^3.3.0",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3"
+  }
+}

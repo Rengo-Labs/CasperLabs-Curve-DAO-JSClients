@@ -1,0 +1,75 @@
+{
+  "name": "MINTER-JsClients",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deployMinter": "ts-node MINTER/scripts/deployMinter.ts",
+    "allowedToMintFor": "ts-node MINTER/scripts/allowedToMintFor.ts",
+    "controller": "ts-node MINTER/scripts/controller.ts",
+    "mint": "ts-node MINTER/scripts/mint.ts",
+    "minted": "ts-node MINTER/scripts/minted.ts",
+    "mintFor": "ts-node MINTER/scripts/mintFor.ts",
+    "mintMany": "ts-node MINTER/scripts/mintMany.ts",
+    "toggleApproveMint": "ts-node MINTER/scripts/toggleApproveMint.ts",
+    "token": "ts-node MINTER/scripts/token.ts"
+  },
+  "Script deployMinter comments": {
+    "Description" : "use it to deploy Minter",
+    "Syntax" : "npm run deployMinter <erc20crvPackageHash> <gaugeControllerPackageHash>",
+    "Example" : "npm run deployMinter 267c011232d1c8d113474b20047f2aabd8d0a704ca9b34dad62cd8372c7a4790 267c011232d1c8d113474b20047f2aabd8d0a704ca9b34dad62cd8372c7a4790"
+  },
+  "Script allowedToMintFor comments": {
+    "Description" : "use it to get allowedToMintFor",
+    "Syntax" : "npm run allowedToMintFor <spender>",
+    "Example" : "npm run allowedToMintFor 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script controller comments": {
+    "Description" : "use it to get controller",
+    "Syntax" : "npm run controller",
+    "Example" : "npm run controller"
+  },
+  "Script mint comments": {
+    "Description" : "use it to mint",
+    "Syntax" : "npm run mint <liquidityGaugeRewardPackageHash>",
+    "Example" : "npm run mint 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script minted comments": {
+    "Description" : "use it to get minted",
+    "Syntax" : "npm run minted <spender>",
+    "Example" : "npm run minted 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script mintFor comments": {
+    "Description" : "use it to mintFor",
+    "Syntax" : "npm run mintFor <liquidityGaugeRewardPackageHash>",
+    "Example" : "npm run mintFor 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script mintMany comments": {
+    "Description" : "use it to mintMany",
+    "Syntax" : "npm run mintMany <liquidityGaugeRewardPackageHash>",
+    "Example" : "npm run mintMany 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script toggleApproveMint comments": {
+    "Description" : "use it to toggleApproveMint",
+    "Syntax" : "npm run toggleApproveMint <tokenPackageHash>",
+    "Example" : "npm run toggleApproveMint 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script token comments": {
+    "Description" : "use it to get token",
+    "Syntax" : "npm run token",
+    "Example" : "npm run token"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "blakejs": "^1.1.1",
+    "casper-js-sdk": "^2.7.5",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.1.0",
+    "ts-results": "^3.3.0",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3"
+  }
+}
