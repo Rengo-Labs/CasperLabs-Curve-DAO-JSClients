@@ -1,0 +1,152 @@
+{
+  "name": "ERC20CRV-JsClients",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deployErc20Crv": "ts-node ERC20-CRV/scripts/erc20CrvDeploy.ts",
+    "approve": "ts-node ERC20-CRV/scripts/approve.ts",
+    "availableSupplysessioncode": "ts-node ERC20-CRV/scripts/availableSupplysessioncode.ts",
+    "burn": "ts-node ERC20-CRV/scripts/burn.ts",
+    "futureEpochTimeWritesessioncode": "ts-node ERC20-CRV/scripts/futureEpochTimeWritesessioncode.ts",
+    "mintableInTimeframesessioncode": "ts-node ERC20-CRV/scripts/mintableInTimeframesessioncode.ts",
+    "mintsessioncode": "ts-node ERC20-CRV/scripts/mintsessioncode.ts",
+    "setAdmin": "ts-node ERC20-CRV/scripts/setAdmin.ts",
+    "setMinter": "ts-node ERC20-CRV/scripts/setMinter.ts",
+    "startEpochTimeWritesessioncode": "ts-node ERC20-CRV/scripts/startEpochTimeWritesessioncode.ts",
+    "transferSessionCode": "ts-node ERC20-CRV/scripts/transferSessionCode.ts",
+    "transferFromSessionCode": "ts-node ERC20-CRV/scripts/transferFromSessionCode.ts",
+    "updateMiningParameters": "ts-node ERC20-CRV/scripts/updateMiningParameters.ts",
+    "admin": "ts-node ERC20-CRV/scripts/admin.ts",
+    "allowances": "ts-node ERC20-CRV/scripts/allowances.ts",
+    "balanceOf": "ts-node ERC20-CRV/scripts/balanceOf.ts",
+    "decimals": "ts-node ERC20-CRV/scripts/decimals.ts",
+    "minter": "ts-node ERC20-CRV/scripts/minter.ts",
+    "name": "ts-node ERC20-CRV/scripts/name.ts",
+    "rate": "ts-node ERC20-CRV/scripts/rate.ts",
+    "symbol": "ts-node ERC20-CRV/scripts/symbol.ts"
+  },
+  "Script symbol comments": {
+    "Description" : "use it to get symbol",
+    "Syntax" : "npm run symbol ",
+    "Example" : "npm run symbol"
+  },
+  "Script rate comments": {
+    "Description" : "use it to get rate",
+    "Syntax" : "npm run rate ",
+    "Example" : "npm run rate"
+  },
+  "Script name comments": {
+    "Description" : "use it to get name",
+    "Syntax" : "npm run name ",
+    "Example" : "npm run name"
+  },
+  "Script minter comments": {
+    "Description" : "use it to get minter",
+    "Syntax" : "npm run minter ",
+    "Example" : "npm run minter"
+  },
+  "Script decimals comments": {
+    "Description" : "use it to get decimals",
+    "Syntax" : "npm run decimals ",
+    "Example" : "npm run decimals"
+  },
+  "Script balanceOf comments": {
+    "Description" : "use it to get balanceOf",
+    "Syntax" : "npm run balanceOf ",
+    "Example" : "npm run balanceOf"
+  },
+  "Script allowances comments": {
+    "Description" : "use it to set allowances",
+    "Syntax" : "npm run allowances <spender>",
+    "Example" : "npm run allowances 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script admin comments": {
+    "Description" : "use it to get admin",
+    "Syntax" : "npm run admin ",
+    "Example" : "npm run admin"
+  },
+  "Script deployErc20Crv comments": {
+    "Description" : "use it to deploy erc20Crv",
+    "Syntax" : "npm run deployErc20Crv <name> <symbol> <decimal>",
+    "Example" : "npm run deployErc20Crv erc20crv erc 2"
+  },
+  "Script updateMiningParameters comments": {
+    "Description" : "use it to update mining parameters",
+    "Syntax" : "npm run updateMiningParameters",
+    "Example" : "npm run updateMiningParameters"
+  },
+  "Script transferFromSessionCode comments": {
+    "Description" : "use it to transfer tokens from owner to other account through session code",
+    "Syntax" : "npm run transferFromSessionCode <recipient> <amount>",
+    "Example" : "npm run transferFromSessionCode 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943 10"
+  },
+  "Script transferSessionCode comments": {
+    "Description" : "use it to call transfer through session code ",
+    "Syntax" : "npm run transferSessionCode <recipient> <amount>",
+    "Example" : "npm run transferSessionCode 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943 10"
+  },
+  "Script startEpochTimeWritesessioncode comments": {
+    "Description" : "use it to call startEpochTimeWrite through session code",
+    "Syntax" : "npm run startEpochTimeWritesessioncode",
+    "Example" : "npm run startEpochTimeWritesessioncode"
+  },
+  "Script setMinter comments": {
+    "Description" : "use it to set minter function",
+    "Syntax" : "npm run setMinter",
+    "Example" : "npm run setMinter"
+  },
+  "Script setAdmin comments": {
+    "Description" : "use it to set admin",
+    "Syntax" : "npm run setAdmin",
+    "Example" : "npm run setAdmin"
+  },
+  "Script mintsessioncode comments": {
+    "Description" : "use it to call mint through session code",
+    "Syntax" : "npm run mintsessioncode <amount>",
+    "Example" : "npm run mintsessioncode 10"
+  },
+  "Script mintableInTimeframesessioncode comments": {
+    "Description" : "use it to call mintableInTimeframe through session code",
+    "Syntax" : "npm run mintableInTimeframesessioncode <start> <end>",
+    "Example" : "npm run mintableInTimeframesessioncode 50000000000 100000000000"
+  },
+  "Script mint comments": {
+    "Description" : "use it to mint tokens",
+    "Syntax" : "npm run mint <amount>",
+    "Example" : "npm run mint 10"
+  },
+  "Script futureEpochTimeWritesessioncode comments": {
+    "Description" : "use it to call futureEpochTimeWrite through session code",
+    "Syntax" : "npm run futureEpochTimeWritesessioncode",
+    "Example" : "npm run futureEpochTimeWritesessioncode"
+  },
+  "Script burn comments": {
+    "Description" : "use it to burn tokens",
+    "Syntax" : "npm run burn <value>",
+    "Example" : "npm run burn 10"
+  },
+  "Script availableSupplysessioncode comments": {
+    "Description" : "use it to call availableSupply through session code",
+    "Syntax" : "npm run availableSupplysessioncode",
+    "Example" : "npm run availableSupplysessioncode"
+  },
+  "Script approve comments": {
+    "Description" : "use it to approve tokens for spender",
+    "Syntax" : "npm run approve <spender> <amount>",
+    "Example" : "npm run approve 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943 10"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "blakejs": "^1.1.1",
+    "casper-js-sdk": "^2.7.5",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.1.0",
+    "ts-results": "^3.3.0",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3"
+  }
+}

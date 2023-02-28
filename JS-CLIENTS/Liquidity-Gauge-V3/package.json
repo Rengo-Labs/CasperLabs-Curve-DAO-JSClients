@@ -1,0 +1,327 @@
+{
+  "name": "LIQUIDITYGAUGEV3-JsClients",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deployliquidityGaugeV3": "ts-node LIQUIDITYGAUGEV3/scripts/deployliquidityGaugeV3.ts",
+    "acceptTransferOwnership": "ts-node LIQUIDITYGAUGEV3/scripts/acceptTransferOwnership.ts",
+    "approve": "ts-node LIQUIDITYGAUGEV3/scripts/approve.ts",
+    "claimableRewardSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/claimableRewardSessionCode.ts",
+    "claimableRewardWriteSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/claimableRewardWriteSessionCode.ts",
+    "claimableTokensSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/claimableTokensSessionCode.ts",
+    "claimedReward": "ts-node LIQUIDITYGAUGEV3/scripts/claimedReward.ts",
+    "commitTransferOwnership": "ts-node LIQUIDITYGAUGEV3/scripts/commitTransferOwnership.ts",
+    "decimals": "ts-node LIQUIDITYGAUGEV3/scripts/decimals.ts",
+    "decreaseAllowanceSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/decreaseAllowanceSessionCode.ts",
+    "deposit": "ts-node LIQUIDITYGAUGEV3/scripts/deposit.ts",
+    "increaseAllowanceSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/increaseAllowanceSessionCode.ts",
+    "integrateCheckpoint": "ts-node LIQUIDITYGAUGEV3/scripts/integrateCheckpoint.ts",
+    "kick": "ts-node LIQUIDITYGAUGEV3/scripts/kick.ts",
+    "lastClaimSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/lastClaimSessionCode.ts",
+    "rewardContractSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/rewardContractSessionCode.ts",
+    "setKilled": "ts-node LIQUIDITYGAUGEV3/scripts/setKilled.ts",
+    "setRewards": "ts-node LIQUIDITYGAUGEV3/scripts/setRewards.ts",
+    "setRewardsReceiver": "ts-node LIQUIDITYGAUGEV3/scripts/setRewardsReceiver.ts",
+    "transferFromSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/transferFromSessionCode.ts",
+    "transferSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/transferSessionCode.ts",
+    "userCheckpointSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/userCheckpointSessionCode.ts",
+    "withdraw": "ts-node LIQUIDITYGAUGEV3/scripts/withdraw.ts",
+    "admin": "ts-node LIQUIDITYGAUGEV3/scripts/admin.ts",
+    "allowances": "ts-node LIQUIDITYGAUGEV3/scripts/allowances.ts",
+    "balanceOf": "ts-node LIQUIDITYGAUGEV3/scripts/balanceOf.ts",
+    "claimedRewardSessionCode": "ts-node LIQUIDITYGAUGEV3/scripts/claimedRewardSessionCode.ts",
+    "controller": "ts-node LIQUIDITYGAUGEV3/scripts/controller.ts",
+    "crvToken": "ts-node LIQUIDITYGAUGEV3/scripts/crvToken.ts",
+    "futureAdmin": "ts-node LIQUIDITYGAUGEV3/scripts/futureAdmin.ts",
+    "futureEpochTime": "ts-node LIQUIDITYGAUGEV3/scripts/futureEpochTime.ts",
+    "inflationRate": "ts-node LIQUIDITYGAUGEV3/scripts/inflationRate.ts",
+    "integrateCheckpointOf": "ts-node LIQUIDITYGAUGEV3/scripts/integrateCheckpointOf.ts",
+    "integrateFraction": "ts-node LIQUIDITYGAUGEV3/scripts/integrateFraction.ts",
+    "integrateInvSupply": "ts-node LIQUIDITYGAUGEV3/scripts/integrateInvSupply.ts",
+    "integrateInvSupplyOf": "ts-node LIQUIDITYGAUGEV3/scripts/integrateInvSupplyOf.ts",
+    "isKilled": "ts-node LIQUIDITYGAUGEV3/scripts/isKilled.ts",
+    "lpToken": "ts-node LIQUIDITYGAUGEV3/scripts/lpToken.ts",
+    "minter": "ts-node LIQUIDITYGAUGEV3/scripts/minter.ts",
+    "name": "ts-node LIQUIDITYGAUGEV3/scripts/name.ts",
+    "period": "ts-node LIQUIDITYGAUGEV3/scripts/period.ts",
+    "periodTimestamp": "ts-node LIQUIDITYGAUGEV3/scripts/periodTimestamp.ts",
+    "rewardIntegral": "ts-node LIQUIDITYGAUGEV3/scripts/rewardIntegral.ts",
+    "rewardIntegralFor": "ts-node LIQUIDITYGAUGEV3/scripts/rewardIntegralFor.ts",
+    "rewardsReceiver": "ts-node LIQUIDITYGAUGEV3/scripts/rewardsReceiver.ts",
+    "rewardTokens": "ts-node LIQUIDITYGAUGEV3/scripts/rewardTokens.ts",
+    "symbol": "ts-node LIQUIDITYGAUGEV3/scripts/symbol.ts",
+    "totalSupply": "ts-node LIQUIDITYGAUGEV3/scripts/totalSupply.ts",
+    "votingEscrow": "ts-node LIQUIDITYGAUGEV3/scripts/votingEscrow.ts",
+    "workingBalances": "ts-node LIQUIDITYGAUGEV3/scripts/workingBalances.ts",
+    "workingSupply": "ts-node LIQUIDITYGAUGEV3/scripts/workingSupply.ts"
+  },
+  "Script deployliquidityGaugeV3 comments": {
+    "Description" : "use it to deploy liquidity gauge v3",
+    "Syntax" : "npm run deployliquidityGaugeV3 <lpAddress> <minter>",
+    "Example" : "npm run deployliquidityGaugeV3 267c011232d1c8d113474b20047f2aabd8d0a704ca9b34dad62cd8372c7a4790 267c011232d1c8d113474b20047f2aabd8d0a704ca9b34dad62cd8372c7a4790"
+  },
+  "Script workingSupply comments": {
+    "Description" : "use it to get workingSupply",
+    "Syntax" : "npm run workingSupply",
+    "Example" : "npm run workingSupply"
+  },
+  "Script workingBalances comments": {
+    "Description" : "use it to get workingBalances",
+    "Syntax" : "npm run workingBalances",
+    "Example" : "npm run workingBalances"
+  },
+  "Script votingEscrow comments": {
+    "Description" : "use it to votingEscrow",
+    "Syntax" : "npm run votingEscrow",
+    "Example" : "npm run votingEscrow"
+  },
+  "Script totalSupply comments": {
+    "Description" : "use it to get totalSupply",
+    "Syntax" : "npm run totalSupply",
+    "Example" : "npm run totalSupply"
+  },
+  "Script symbol comments": {
+    "Description" : "use it to get symbol",
+    "Syntax" : "npm run symbol",
+    "Example" : "npm run symbol"
+  },
+  "Script rewardTokens comments": {
+    "Description" : "use it to get rewardTokens",
+    "Syntax" : "npm run rewardTokens",
+    "Example" : "npm run rewardTokens"
+  },
+  "Script rewardsReceiver comments": {
+    "Description" : "use it to get rewardsReceiver",
+    "Syntax" : "npm run rewardsReceiver  <spender>",
+    "Example" : "npm run rewardsReceiver 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script rewardIntegralFor comments": {
+    "Description" : "use it to get rewardIntegralFor",
+    "Syntax" : "npm run rewardIntegralFor  <spender>",
+    "Example" : "npm run rewardIntegralFor 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script rewardIntegral comments": {
+    "Description" : "use it to get rewardIntegral",
+    "Syntax" : "npm run rewardIntegral",
+    "Example" : "npm run rewardIntegral"
+  },
+  "Script periodTimestamp comments": {
+    "Description" : "use it to get periodTimestamp",
+    "Syntax" : "npm run periodTimestamp",
+    "Example" : "npm run periodTimestamp"
+  },
+  "Script period comments": {
+    "Description" : "use it to get period",
+    "Syntax" : "npm run period <spender>",
+    "Example" : "npm run period 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script name comments": {
+    "Description" : "use it to get name",
+    "Syntax" : "npm run name",
+    "Example" : "npm run name"
+  },
+  "Script minter comments": {
+    "Description" : "use it to minter",
+    "Syntax" : "npm run minter",
+    "Example" : "npm run minter"
+  },
+  "Script lpToken comments": {
+    "Description" : "use it to lpToken",
+    "Syntax" : "npm run lpToken",
+    "Example" : "npm run lpToken"
+  },
+  "Script isKilled comments": {
+    "Description" : "use it to get isKilled",
+    "Syntax" : "npm run isKilled",
+    "Example" : "npm run isKilled"
+  },
+  "Script integrateInvSupplyOf comments": {
+    "Description" : "use it to get integrateInvSupplyOf",
+    "Syntax" : "npm run integrateInvSupplyOf",
+    "Example" : "npm run integrateInvSupplyOf"
+  },
+  "Script integrateInvSupply comments": {
+    "Description" : "use it to get integrateInvSupply",
+    "Syntax" : "npm run integrateInvSupply",
+    "Example" : "npm run integrateInvSupply"
+  },
+  "Script integrateFraction comments": {
+    "Description" : "use it to get integrateFraction",
+    "Syntax" : "npm run integrateFraction",
+    "Example" : "npm run integrateFraction"
+  },
+  "Script integrateCheckpointOf comments": {
+    "Description" : "use it to get integrateCheckpointOf",
+    "Syntax" : "npm run integrateCheckpointOf <spender>",
+    "Example" : "npm run integrateCheckpointOf 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script inflationRate comments": {
+    "Description" : "use it to get inflationRate",
+    "Syntax" : "npm run inflationRate",
+    "Example" : "npm run inflationRate"
+  },
+  "Script futureEpochTime comments": {
+    "Description" : "use it to get futureEpochTime",
+    "Syntax" : "npm run futureEpochTime",
+    "Example" : "npm run futureEpochTime"
+  },
+  "Script futureAdmin comments": {
+    "Description" : "use it to get futureAdmin",
+    "Syntax" : "npm run futureAdmin  <spender>",
+    "Example" : "npm run futureAdmin 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script crvToken comments": {
+    "Description" : "use it to get crvToken",
+    "Syntax" : "npm run crvToken",
+    "Example" : "npm run crvToken"
+  },
+  "Script controller comments": {
+    "Description" : "use it to controller",
+    "Syntax" : "npm run controller",
+    "Example" : "npm run controller"
+  },
+  "Script claimedRewardSessionCode comments": {
+    "Description" : "use it to call claimedRewards through session code",
+    "Syntax" : "npm run claimedRewardSessionCode <token>",
+    "Example" : "npm run claimedRewardSessionCode 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 "
+  },
+  "Script balanceOf comments": {
+    "Description" : "use it to get balanceOf",
+    "Syntax" : "npm run balanceOf",
+    "Example" : "npm run balanceOf"
+  },
+  "Script allowances comments": {
+    "Description" : "use it to get allowances",
+    "Syntax" : "npm run allowances <spender>",
+    "Example" : "npm run allowances 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script admin comments": {
+    "Description" : "use it to get admin",
+    "Syntax" : "npm run admin",
+    "Example" : "npm run admin"
+  },
+  "Script withdraw comments": {
+    "Description" : "use it to withdraw value",
+    "Syntax" : "npm run withdraw <value>",
+    "Example" : "npm run withdraw 10"
+  },
+  "Script userCheckpointSessionCode comments": {
+    "Description" : "use it to call userCheckpointSessionCode through session code",
+    "Syntax" : "npm run userCheckpointSessionCode",
+    "Example" : "npm run userCheckpointSessionCode"
+  },
+  "Script transferSessionCode comments": {
+    "Description" : "use it to call transferSessionCode through session code",
+    "Syntax" : "npm run transferSessionCode <recipientAccountHahs> <amount>",
+    "Example" : "npm run transferSessionCode 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 10"
+  },
+  "Script transferFromSessionCode comments": {
+    "Description" : "use it to call transferFromSessionCode through session code",
+    "Syntax" : "npm run transferFromSessionCode <recipientAccountHahs> <amount>",
+    "Example" : "npm run transferFromSessionCode 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 10"
+  },
+  "Script setRewardsReceiver comments": {
+    "Description" : "use it to set Rewards Receiver",
+    "Syntax" : "npm run setRewardsReceiver <receiver>",
+    "Example" : "npm run setRewardsReceiver 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script setRewards comments": {
+    "Description" : "use it to set Rewards",
+    "Syntax" : "npm run setRewards <rewardContract> <claimSig> <rewardTokens>",
+    "Example" : "npm run setRewards 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 claim 2 "
+  },
+  "Script setKilled comments": {
+    "Description" : "use it to set Killed",
+    "Syntax" : "npm run setKilled",
+    "Example" : "npm run setKilled"
+  },
+  "Script rewardContractSessionCode comments": {
+    "Description" : "use it to call rewardContractSessionCode through session code",
+    "Syntax" : "npm run rewardContractSessionCode",
+    "Example" : "npm run rewardContractSessionCode"
+  },
+  "Script lastClaimSessionCode comments": {
+    "Description" : "use it to call lastClaimSessionCode through session code",
+    "Syntax" : "npm run lastClaimSessionCode",
+    "Example" : "npm run lastClaimSessionCode"
+  },
+  "Script kick comments": {
+    "Description" : "use it to kick",
+    "Syntax" : "npm run kick",
+    "Example" : "npm run kick"
+  },
+  "Script integrateCheckpoint comments": {
+    "Description" : "use it to get integrateCheckpoint",
+    "Syntax" : "npm run integrateCheckpoint",
+    "Example" : "npm run integrateCheckpoint"
+  },
+  "Script increaseAllowanceSessionCode comments": {
+    "Description" : "use it to call increaseAllowanceSessionCode through session code",
+    "Syntax" : "npm run increaseAllowanceSessionCode <spender> <amount>",
+    "Example" : "npm run increaseAllowanceSessionCode 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 10"
+  },
+  "Script deposit comments": {
+    "Description" : "use it to deposit value",
+    "Syntax" : "npm run deposit <value>",
+    "Example" : "npm run deposit 10"
+  },
+  "Script decreaseAllowanceSessionCode comments": {
+    "Description" : "use it to decrease Allowance",
+    "Syntax" : "npm run decreaseAllowanceSessionCode <spender> <amount>",
+    "Example" : "npm run decreaseAllowanceSessionCode 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 10"
+  },
+  "Script decimals comments": {
+    "Description" : "use it to get decimals",
+    "Syntax" : "npm run decimals",
+    "Example" : "npm run decimals"
+  },
+  "Script commitTransferOwnership comments": {
+    "Description" : "use it to commit Transfer Ownership",
+    "Syntax" : "npm run commitTransferOwnership",
+    "Example" : "npm run commitTransferOwnership"
+  },
+  "Script claimedReward comments": {
+    "Description" : "use it to claimed Reward",
+    "Syntax" : "npm run claimedReward <addr> <token>",
+    "Example" : "npm run claimedReward 4af852da890104582a535d90ea369a5b9a1bb1fcc19874fdaf9f8f6dc4abedae 4af852da890104582a535d90ea369a5b9a1bb1fcc19874fdaf9f8f6dc4abedae"
+  },
+  "Script claimableTokensSessionCode comments": {
+    "Description" : "use it to call claimableTokensSessionCode through session code",
+    "Syntax" : "npm run claimableTokensSessionCode <addr>",
+    "Example" : "npm run claimableTokensSessionCode 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script claimableRewardWriteSessionCode comments": {
+    "Description" : "use it to call claimableRewardWriteSessionCode through session code",
+    "Syntax" : "npm run claimableRewardWriteSessionCode <token>",
+    "Example" : "npm run claimableRewardWriteSessionCode 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script claimableRewardSessionCode comments": {
+    "Description" : "use it to call claimableRewardSessionCode through session code",
+    "Syntax" : "npm run claimableRewardSessionCode <token>",
+    "Example" : "npm run claimableRewardSessionCode 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222"
+  },
+  "Script approve comments": {
+    "Description" : "use it to approve",
+    "Syntax" : "npm run approve <spender> <amount>",
+    "Example" : "npm run approve 56b77636b3af55977cfeea4eb22d18394ee2aa2ba4b2afe3a13a91adc26a1222 10"
+  },
+  "Script acceptTransferOwnership comments": {
+    "Description" : "use it to accept Transfer Ownership",
+    "Syntax" : "npm run acceptTransferOwnership",
+    "Example" : "npm run acceptTransferOwnership"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "blakejs": "^1.1.1",
+    "casper-js-sdk": "^2.7.5",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.1.0",
+    "ts-results": "^3.3.0",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3"
+  }
+}
