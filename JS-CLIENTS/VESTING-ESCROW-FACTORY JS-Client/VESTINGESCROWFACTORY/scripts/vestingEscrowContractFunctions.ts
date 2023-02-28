@@ -94,66 +94,64 @@ export class VestingEscrowFactoryFunctions {
    console.log(`... Contract futureAdminVef: ${futureAdminVef}`);
   }
 
-  applyTransferOwnershipVef =async () => {
+  token =async () => {
     await this.vestingEscrowFactory.setContractHash(this.contractHash!);
-    const applyTransferOwnershipVefDeployHash = await this.vestingEscrowFactory.applyTransferOwnershipVef(
-      KEYS!,
-      VESTING_ESCROW_FACTORY_PAYMENT_AMOUNT!
-     );
-     console.log("... applyTransferOwnershipVef deploy hash: ", applyTransferOwnershipVefDeployHash);
-    
-     await getDeploy(NODE_ADDRESS!, applyTransferOwnershipVefDeployHash);
-     console.log("... applyTransferOwnershipVef function called successfully.");
+    const token = await this.vestingEscrowFactory.token();
+    console.log(`... Contract token: ${token}`);
   }
 
-  commitTransferOwnershipVef=async () => {
+  startTime =async () => {
     await this.vestingEscrowFactory.setContractHash(this.contractHash!);
-    const commitTransferOwnershipVefDeployHash = await this.vestingEscrowFactory.commitTransferOwnershipVef(
-      KEYS!,
-      KEYS.publicKey,
-      VESTING_ESCROW_FACTORY_PAYMENT_AMOUNT!
-     );
-     console.log("... commitTransferOwnershipVef deploy hash: ", commitTransferOwnershipVefDeployHash);
-    
-     await getDeploy(NODE_ADDRESS!, commitTransferOwnershipVefDeployHash);
-     console.log("... commitTransferOwnershipVef function called successfully.");
+    const startTime = await this.vestingEscrowFactory.startTime();
+    console.log(`... Contract startTime: ${startTime}`);
   }
 
-  VestingContract =async (token:string,amount:string,duration:string,start:string) => {
+  endTime =async () => {
     await this.vestingEscrowFactory.setContractHash(this.contractHash!);
-    const deployVestingContractDeployHash = await this.vestingEscrowFactory.deployVestingContract(
-      KEYS!,
-      token!,
-      KEYS.publicKey,
-      amount!,
-      true,
-      duration!,
-      start!,
-      VESTING_ESCROW_FACTORY_PAYMENT_AMOUNT!
-     );
-     console.log("... deployVestingContract deploy hash: ", deployVestingContractDeployHash);
-    
-     await getDeploy(NODE_ADDRESS!, deployVestingContractDeployHash);
-     console.log("... deployVestingContract function called successfully.");
+    const endTime = await this.vestingEscrowFactory.endTime();
+    console.log(`... Contract endTime: ${endTime}`);
   }
 
-  initialize =async (token:string,recipient:string,amount:string,startTime:string,endTime:string) => {
+  initialLockedSupply =async () => {
     await this.vestingEscrowFactory.setContractHash(this.contractHash!);
-    const initializeDeployHash = await this.vestingEscrowFactory.initialize(
-      KEYS!,
-      KEYS.publicKey,
-      token!,
-      recipient!,
-      amount!,
-      startTime!,
-      endTime!,
-      true,
-      VESTING_ESCROW_FACTORY_PAYMENT_AMOUNT!
-     );
-     console.log("... initialize deploy hash: ", initializeDeployHash);
-    
-     await getDeploy(NODE_ADDRESS!, initializeDeployHash);
-     console.log("... initialize function called successfully.");
+    const initialLockedSupply = await this.vestingEscrowFactory.initialLockedSupply();
+   console.log(`... Contract initialLockedSupply: ${initialLockedSupply}`);
+  }
+
+  canDisable =async () => {
+    await this.vestingEscrowFactory.setContractHash(this.contractHash!);
+    const canDisable = await this.vestingEscrowFactory.canDisable();
+    console.log(`... Contract canDisable: ${canDisable}`);
+  }
+
+  admin =async () => {
+    await this.vestingEscrowFactory.setContractHash(this.contractHash!);
+    const admin = await this.vestingEscrowFactory.admin();
+    console.log(`... Contract admin: ${admin}`);
+  }
+
+  futureAdmin =async () => {
+    await this.vestingEscrowFactory.setContractHash(this.contractHash!);
+    const futureAdmin = await this.vestingEscrowFactory.futureAdmin();
+    console.log(`... Contract futureAdmin: ${futureAdmin}`);
+  }
+
+  initialLocked =async () => {
+    await this.vestingEscrowFactory.setContractHash(this.contractHash!);
+    const initialLocked = await this.vestingEscrowFactory.initialLocked(KEYS.publicKey.toAccountHashStr()!);
+   console.log(`... Contract initialLocked: ${initialLocked}`);
+  }
+
+  totalClaimed =async () => {
+    await this.vestingEscrowFactory.setContractHash(this.contractHash!);
+    const totalClaimed = await this.vestingEscrowFactory.totalClaimed(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... Contract totalClaimed: ${totalClaimed}`);
+  }
+
+  disabledAt =async () => {
+    await this.vestingEscrowFactory.setContractHash(this.contractHash!);
+    const disabledAt = await this.vestingEscrowFactory.disabledAt(KEYS.publicKey.toAccountHashStr()!);
+   console.log(`... Contract disabledAt: ${disabledAt}`);
   }
 
   toggleDisable =async (recipient:string) => {
@@ -196,94 +194,3 @@ export class VestingEscrowFactoryFunctions {
 
  
 }
-
-// const test = async () => {
-
-//   await vestingEscrowFactory.setContractHash(VESTINGESCROWFACTORY_CONTRACT_HASH!);
-
-//   //balanceOf
-
-
-//  //vestedSupply
-//  const vestedSupplyDeployHash = await vestingEscrowFactory.vestedSupply(
-//   KEYS!,
-//   VESTING_ESCROW_FACTORY_PAYMENT_AMOUNT!
-//  );
-//  console.log("... vestedSupply deploy hash: ", vestedSupplyDeployHash);
-
-//  await getDeploy(NODE_ADDRESS!, vestedSupplyDeployHash);
-//  console.log("... vestedSupply function called successfully.");
-
-//  //lockedSupply
-//  const lockedSupplyDeployHash = await vestingEscrowFactory.lockedSupply(
-//   KEYS!,
-//   VESTING_ESCROW_FACTORY_PAYMENT_AMOUNT!
-//  );
-//  console.log("... lockedSupply deploy hash: ", lockedSupplyDeployHash);
-
-//  await getDeploy(NODE_ADDRESS!, lockedSupplyDeployHash);
-//  console.log("... lockedSupply function called successfully.");
-
-//  //lockedOf
-//  const lockedOfDeployHash = await vestingEscrowFactory.lockedOf(
-//   KEYS!,
-//   VESTING_ESCROW_FACTORY_RECIPIENT!,
-//   VESTING_ESCROW_FACTORY_PAYMENT_AMOUNT!
-//  );
-//  console.log("... lockedOf deploy hash: ", lockedOfDeployHash);
-
-//  await getDeploy(NODE_ADDRESS!, lockedOfDeployHash);
-//  console.log("... lockedOf function called successfully.");
-
-//  //commitTransferOwnership
-//  const commitTransferOwnershipDeployHash = await vestingEscrowFactory.commitTransferOwnership(
-//   KEYS!,
-//   KEYS.publicKey,
-//   VESTING_ESCROW_FACTORY_PAYMENT_AMOUNT!
-//  );
-//  console.log("... commitTransferOwnership deploy hash: ", commitTransferOwnershipDeployHash);
-
-//  await getDeploy(NODE_ADDRESS!, commitTransferOwnershipDeployHash);
-//  console.log("... commitTransferOwnership function called successfully.");
-
-//  //applyTransferOwnership
-//  const applyTransferOwnershipDeployHash = await vestingEscrowFactory.applyTransferOwnership(
-//   KEYS!,
-//   VESTING_ESCROW_FACTORY_PAYMENT_AMOUNT!
-//  );
-//  console.log("... applyTransferOwnership deploy hash: ", applyTransferOwnershipDeployHash);
-
-//  await getDeploy(NODE_ADDRESS!, applyTransferOwnershipDeployHash);
-//  console.log("... applyTransferOwnership function called successfully.");
-
-//  //claim
-
-
-// };
-
-
-// vestedOf =async (recipient:string) => {
-//   await this.vestingEscrowFactory.setContractHash(this.contractHash!);
-//   const vestedOfDeployHash = await this.vestingEscrowFactory.vestedOf(
-//     KEYS!,
-//     VESTING_ESCROW_FACTORY_RECIPIENT!,
-//     VESTING_ESCROW_FACTORY_PAYMENT_AMOUNT!
-//    );
-//    console.log("... vestedOf deploy hash: ", vestedOfDeployHash);
-  
-//    await getDeploy(NODE_ADDRESS!, vestedOfDeployHash);
-//    console.log("... vestedOf function called successfully.");
-// }
-
-// balanceOf=async () => {
-//   await this.vestingEscrowFactory.setContractHash(this.contractHash!);
-//   const balanceOfDeployHash = await this.vestingEscrowFactory.balanceOf(
-//     KEYS!,
-//     VESTING_ESCROW_FACTORY_RECIPIENT!,
-//     VESTING_ESCROW_FACTORY_PAYMENT_AMOUNT!
-//    );
-//    console.log("... balanceOf deploy hash: ", balanceOfDeployHash);
-  
-//    await getDeploy(NODE_ADDRESS!, balanceOfDeployHash);
-//    console.log("... balanceOf function called successfully."); 
-// }

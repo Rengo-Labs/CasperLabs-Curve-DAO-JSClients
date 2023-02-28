@@ -15,6 +15,7 @@ import {
   EventStream,
   Keys,
   RuntimeArgs,
+  CLOption,
 } from "casper-js-sdk";
 import { Some, None } from "ts-results";
 import * as blake from "blakejs";
@@ -25,9 +26,9 @@ import { RecipientType, IPendingDeploy } from "./types";
 import {createRecipientAddress } from "./utils";
 
 class GaugeControllerClient {
-  private contractName: string = "erc20";
-  private contractHash: string= "erc20";
-  private contractPackageHash: string= "erc20";
+  private contractName: string = "gaugeController";
+  private contractHash: string= "gaugeController";
+  private contractPackageHash: string= "gaugeController";
   private namedKeys: {
     gauge_types_ : string,
     gauge_type_names : string,
@@ -123,8 +124,8 @@ class GaugeControllerClient {
 		);
 
     const runtimeArgs = RuntimeArgs.fromMap({
-      destination_package_hash: utils.createRecipientAddress(_packageHash),
-      destination_entrypoint: CLValueBuilder.string(entrypointName),
+      package_hash: utils.createRecipientAddress(_packageHash),
+      entrypoint: CLValueBuilder.string(entrypointName),
     });
 
     const deployHash = await installWasmFile({
@@ -157,8 +158,8 @@ class GaugeControllerClient {
 
     const _addr = new CLByteArray(Uint8Array.from(Buffer.from(addr, 'hex')));
     const runtimeArgs = RuntimeArgs.fromMap({
-      destination_package_hash: utils.createRecipientAddress(_packageHash),
-      destination_entrypoint: CLValueBuilder.string(entrypointName),
+      package_hash: utils.createRecipientAddress(_packageHash),
+      entrypoint: CLValueBuilder.string(entrypointName),
       addr: CLValueBuilder.key(_addr),
     });
 
@@ -191,9 +192,9 @@ class GaugeControllerClient {
 		);
 
     const runtimeArgs = RuntimeArgs.fromMap({
-      destination_package_hash: utils.createRecipientAddress(_packageHash),
-      destination_entrypoint: CLValueBuilder.string(entrypointName),
-      type_id: CLValueBuilder.u128(type_id),
+      package_hash: utils.createRecipientAddress(_packageHash),
+      entrypoint: CLValueBuilder.string(entrypointName),
+      type_id: CLValueBuilder.tuple2([CLValueBuilder.bool(true), CLValueBuilder.u128(type_id)])
     });
 
     const deployHash = await installWasmFile({
@@ -379,7 +380,7 @@ class GaugeControllerClient {
     paymentAmount: string){
 
     const runtimeArgs = RuntimeArgs.fromMap({
-      type_id : CLValueBuilder.u128(type_id),
+      type_id: CLValueBuilder.tuple2([CLValueBuilder.bool(true), CLValueBuilder.u128(type_id)]),
       weight : CLValueBuilder.u256(weight),
     });
 
@@ -442,13 +443,13 @@ class GaugeControllerClient {
 
     const runtimeArgs = RuntimeArgs.fromMap({
     name : CLValueBuilder.string(name),
-    weight : CLValueBuilder.u256(weight)
+    weight: new CLOption(Some(CLValueBuilder.u256(weight)))
     });
 
     const deployHash = await contractCall({
       chainName: this.chainName,
       contractHash: this.contractHash,
-      entryPoint: "add_type",
+      entryPoint: "add_type", 
       keys,
       nodeAddress: this.nodeAddress,
       paymentAmount,
@@ -478,7 +479,7 @@ class GaugeControllerClient {
     const runtimeArgs = RuntimeArgs.fromMap({
       addr: utils.createRecipientAddress(_addr),
       gauge_type : CLValueBuilder.u128(gauge_type),
-      weight : CLValueBuilder.u256(weight)
+      weight: new CLOption(Some(CLValueBuilder.u256(weight)))
     });
 
     const deployHash = await contractCall({
@@ -511,8 +512,8 @@ class GaugeControllerClient {
 		);
 
     const runtimeArgs = RuntimeArgs.fromMap({
-      _gauge_addr: utils.createRecipientAddress(_gauge_addr),
-      _user_weight : CLValueBuilder.u256(user_weight)
+      gauge_addr: utils.createRecipientAddress(_gauge_addr),
+      user_weight : CLValueBuilder.u256(user_weight)
     });
 
     const deployHash = await contractCall({

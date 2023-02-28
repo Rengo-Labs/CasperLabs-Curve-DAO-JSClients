@@ -105,6 +105,24 @@ class CurveRewardsSessionCode {
   
   };
 
+  isOwnersessioncode = async () => {
+  
+    const isOwnersessioncodeDeployHash = await this.curveRewards.isOwnersessioncode(
+      KEYS,
+      this.packageHash!,
+      "is_owner",
+      CURVE_REWARDS_INSTALL_PAYMENT_AMOUNT!,
+      CURVE_REWARDS_PROXY_WASM_PATH!
+    );
+  
+    console.log(`... isOwnersessioncode Function deployHash: ${isOwnersessioncodeDeployHash}`);
+  
+    await getDeploy(NODE_ADDRESS!, isOwnersessioncodeDeployHash);
+  
+    console.log(`... isOwnersessioncode Function called successfully through sessionCode.`);
+  
+  };
+
     rewardPerTokenSessionCode = async () => {
     const rewardPerTokenJsClientsessioncodeDeployHash = await this.curveRewards.rewardPerTokenJsClientsessioncode(
       KEYS,

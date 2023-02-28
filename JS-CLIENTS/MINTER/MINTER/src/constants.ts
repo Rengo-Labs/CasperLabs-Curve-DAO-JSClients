@@ -1,5 +1,5 @@
-export enum ERC20Events {
+export enum MinterEvents {
   Approval="approve",
-  Transfer="erc20_transfer"
+  Transfer="minter_transfer"
 }
 

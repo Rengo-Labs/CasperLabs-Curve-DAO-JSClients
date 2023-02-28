@@ -160,6 +160,25 @@ export class LiquidityGaugeV3SessionCode {
   
   };
 
+  claimedRewardSessionCode = async (token:string) => {
+    const claimedRewardSessionCodeDeployHash = await this.liquidityGaugeV3.claimedRewardSessionCode(
+      KEYS,
+      "claimed_rewards",
+      this.packageHash!,
+      KEYS.publicKey!,
+      token!,
+      LIQUIDITY_GAUGE_V3_INSTALL_PAYMENT_AMOUNT!,
+      LIQUIDITY_GAUGE_V3_PROXY_WASM_PATH!
+    );
+  
+    console.log(`... claimedRewardSessionCode Function deployHash: ${claimedRewardSessionCodeDeployHash}`);
+  
+    await getDeploy(NODE_ADDRESS!, claimedRewardSessionCodeDeployHash);
+  
+    console.log(`... claimedRewardSessionCode Function called successfully through sessionCode.`);
+  
+  };
+
   claimableRewardSessionCode = async (token:string) => {
     const claimableRewardSessionCodeDeployHash = await this.liquidityGaugeV3.claimableRewardSessionCode(
       KEYS,
@@ -233,6 +252,44 @@ export class LiquidityGaugeV3SessionCode {
     await getDeploy(NODE_ADDRESS!, transferFromSessionCodeDeployHash);
   
     console.log(`... transferFromSessionCode Function called successfully through sessionCode.`);
+  
+  };
+
+  increaseAllowanceSessionCode = async (spender:string, amount:string) => {
+    const increaseAllowanceSessionCodeDeployHash = await this.liquidityGaugeV3.increaseAllowanceSessionCode(
+      KEYS,
+      "increase_allowance",
+      this.packageHash!,
+      spender!,
+      amount!,
+      LIQUIDITY_GAUGE_V3_INSTALL_PAYMENT_AMOUNT!,
+      LIQUIDITY_GAUGE_V3_PROXY_WASM_PATH!
+    );
+  
+    console.log(`... increaseAllowanceSessionCode Function deployHash: ${increaseAllowanceSessionCodeDeployHash}`);
+  
+    await getDeploy(NODE_ADDRESS!, increaseAllowanceSessionCodeDeployHash);
+  
+    console.log(`... increaseAllowanceSessionCode Function called successfully through sessionCode.`);
+  
+  };
+
+  decreaseAllowanceSessionCode = async (spender:string, amount:string) => {
+    const decreaseAllowanceSessionCodeDeployHash = await this.liquidityGaugeV3.decreaseAllowanceSessionCode(
+      KEYS,
+      "decrease_allowance",
+      this.packageHash!,
+      spender!,
+      amount!,
+      LIQUIDITY_GAUGE_V3_INSTALL_PAYMENT_AMOUNT!,
+      LIQUIDITY_GAUGE_V3_PROXY_WASM_PATH!
+    );
+  
+    console.log(`... decreaseAllowanceSessionCode Function deployHash: ${decreaseAllowanceSessionCodeDeployHash}`);
+  
+    await getDeploy(NODE_ADDRESS!, decreaseAllowanceSessionCodeDeployHash);
+  
+    console.log(`... decreaseAllowanceSessionCode Function called successfully through sessionCode.`);
   
   };
 }

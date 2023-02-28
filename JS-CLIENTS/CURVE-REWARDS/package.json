@@ -19,9 +19,69 @@
     "totalSupplyJsClient": "ts-node CURVE-REWARDS/scripts/totalSupplyJsClient.ts",
     "transferOwnership": "ts-node CURVE-REWARDS/scripts/transferOwnership.ts",
     "withdraw": "ts-node CURVE-REWARDS/scripts/withdraw.ts",
-    "withdrawLp": "ts-node CURVE-REWARDS/scripts/withdrawLp.ts"
+    "withdrawLp": "ts-node CURVE-REWARDS/scripts/withdrawLp.ts",
+    "duration": "ts-node CURVE-REWARDS/scripts/duration.ts",
+    "isOwnersessioncode": "ts-node CURVE-REWARDS/scripts/isOwnersessioncode.ts",
+    "lastUpdateTime": "ts-node CURVE-REWARDS/scripts/lastUpdateTime.ts",
+    "periodFinish": "ts-node CURVE-REWARDS/scripts/periodFinish.ts",
+    "rewardPerTokenStored": "ts-node CURVE-REWARDS/scripts/rewardPerTokenStored.ts",
+    "rewardRate": "ts-node CURVE-REWARDS/scripts/rewardRate.ts",
+    "rewards": "ts-node CURVE-REWARDS/scripts/rewards.ts",
+    "snx": "ts-node CURVE-REWARDS/scripts/snx.ts",
+    "uni": "ts-node CURVE-REWARDS/scripts/uni.ts",
+    "userRewardPerTokenPaid": "ts-node CURVE-REWARDS/scripts/userRewardPerTokenPaid.ts"
     
   },
+  "Script userRewardPerTokenPaid comments": {
+    "Description" : "use it to get user reward per token paid",
+    "Syntax" : "npm run userRewardPerTokenPaid",
+    "Example" : "npm run userRewardPerTokenPaid"
+},
+  "Script uni comments": {
+    "Description" : "use it to get uni",
+    "Syntax" : "npm run uni",
+    "Example" : "npm run uni"
+},
+  "Script snx comments": {
+    "Description" : "use it to get snx",
+    "Syntax" : "npm run snx",
+    "Example" : "npm run snx"
+},
+  "Script rewards comments": {
+    "Description" : "use it to get rewards",
+    "Syntax" : "npm run rewards",
+    "Example" : "npm run rewards"
+},
+  "Script rewardRate comments": {
+    "Description" : "use it to get rewardRate",
+    "Syntax" : "npm run rewardRate",
+    "Example" : "npm run rewardRate"
+},
+  "Script rewardPerTokenStored comments": {
+    "Description" : "use it to get reward per token stored",
+    "Syntax" : "npm run rewardPerTokenStored",
+    "Example" : "npm run rewardPerTokenStored"
+},
+  "Script periodFinish comments": {
+    "Description" : "use it to get period finish",
+    "Syntax" : "npm run periodFinish",
+    "Example" : "npm run periodFinish"
+},
+  "Script lastUpdateTime comments": {
+    "Description" : "use it to get lastUpdateTime",
+    "Syntax" : "npm run lastUpdateTime",
+    "Example" : "npm run lastUpdateTime"
+},
+  "Script isOwnersessioncode comments": {
+    "Description" : "use it to deploy isOwnersessioncode function",
+    "Syntax" : "npm run isOwnersessioncode",
+    "Example" : "npm run isOwnersessioncode"
+},
+  "Script duration comments": {
+    "Description" : "use it to get duration",
+    "Syntax" : "npm run duration",
+    "Example" : "npm run duration"
+},
   "Script deployCurveRewards comments": {
     "Description" : "use it to deploy CurveRewards",
     "Syntax" : "npm run deployCurveRewards <tokenPackageHash> <rewardPackageHash>",

@@ -62,17 +62,65 @@ class CurveRewardsFunctions {
     console.log(`... owner: ${ownerJsClient}`);
   }
 
-  isOwnerJsClient =async () => {
-   await this.curveRewards.setContractHash(this.contractHash!);
-   const isOwnerJsClient = await this.curveRewards.isOwnerJsClient();
-   console.log(`... isOwner: ${isOwnerJsClient}`);
-  }
-
   // //balanceOf
   balanceOf =async () => {
     await this.curveRewards.setContractHash(this.contractHash!);
    const balanceOf = await this.curveRewards.balanceOf(KEYS.publicKey.toAccountHashStr()!);
    console.log(`... balance: ${balanceOf}`);
+  }
+  
+  uni =async () => {
+    await this.curveRewards.setContractHash(this.contractHash!);
+    const uni = await this.curveRewards.uni();
+    console.log(`... uni: ${uni}`);
+  }
+
+  snx =async () => {
+    await this.curveRewards.setContractHash(this.contractHash!);
+    const snx = await this.curveRewards.snx();
+    console.log(`... snx: ${snx}`);
+  }
+
+  duration =async () => {
+    await this.curveRewards.setContractHash(this.contractHash!);
+    const duration = await this.curveRewards.duration();
+    console.log(`... duration: ${duration}`);
+  }
+
+  periodFinish =async () => {
+    await this.curveRewards.setContractHash(this.contractHash!);
+    const periodFinish = await this.curveRewards.periodFinish();
+    console.log(`... periodFinish: ${periodFinish}`);
+  }
+
+  rewardRate =async () => {
+    await this.curveRewards.setContractHash(this.contractHash!);
+    const rewardRate = await this.curveRewards.rewardRate();
+    console.log(`... rewardRate: ${rewardRate}`);
+  }
+
+  lastUpdateTime =async () => {
+    await this.curveRewards.setContractHash(this.contractHash!);
+    const lastUpdateTime = await this.curveRewards.lastUpdateTime();
+    console.log(`... lastUpdateTime: ${lastUpdateTime}`);
+  }
+
+  rewardPerTokenStored =async () => {
+    await this.curveRewards.setContractHash(this.contractHash!);
+    const rewardPerTokenStored = await this.curveRewards.rewardPerTokenStored();
+    console.log(`... rewardPerTokenStored: ${rewardPerTokenStored}`);
+  }
+
+  userRewardPerTokenPaid =async () => {
+    await this.curveRewards.setContractHash(this.contractHash!);
+    const userRewardPerTokenPaid = await this.curveRewards.userRewardPerTokenPaid(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... userRewardPerTokenPaid: ${userRewardPerTokenPaid}`);
+  }
+
+  rewards =async () => {
+    await this.curveRewards.setContractHash(this.contractHash!);
+    const rewards = await this.curveRewards.rewards(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... rewards: ${rewards}`);
   }
 
   stakeLp =async (amount:string) => {

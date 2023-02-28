@@ -175,6 +175,45 @@ export class Erc20CrvSessionCode {
   
   };
 
+  transferSessionCode = async (recipient: string,amount:string) => {
+    const transferSessionCodeDeployHash = await this.erc20Crv.transferSessionCode(
+      KEYS,
+      "transfer",
+      this.packageHash!,
+      recipient!,
+      amount!,
+      ERC20CRV_INSTALL_PAYMENT_AMOUNT!,
+      ERC20CRV_PROXY_WASM_PATH!
+    );
+  
+    console.log(`... transferSessionCode Function deployHash: ${transferSessionCodeDeployHash}`);
+  
+    await getDeploy(NODE_ADDRESS!, transferSessionCodeDeployHash);
+  
+    console.log(`... transferSessionCode Function called successfully through sessionCode.`);
+  
+  };
+
+  transferFromSessionCode = async (recipient: string,amount:string) => {
+    const transferFromSessionCodeDeployHash = await this.erc20Crv.transferFromSessionCode(
+      KEYS,
+      "transfer_from",
+      this.packageHash!,
+      KEYS.publicKey!,
+      recipient!,
+      amount!,
+      ERC20CRV_INSTALL_PAYMENT_AMOUNT!,
+      ERC20CRV_PROXY_WASM_PATH!
+    );
+  
+    console.log(`... transferFromSessionCode Function deployHash: ${transferFromSessionCodeDeployHash}`);
+  
+    await getDeploy(NODE_ADDRESS!, transferFromSessionCodeDeployHash);
+  
+    console.log(`... transferFromSessionCode Function called successfully through sessionCode.`);
+  
+  };
+
 }
 
 

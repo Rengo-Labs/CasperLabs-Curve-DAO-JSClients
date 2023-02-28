@@ -257,6 +257,83 @@ class ERC20CRVClient {
     }
   }
 
+  public async transferSessionCode(
+    keys: Keys.AsymmetricKey,
+    entrypointName:string,
+    packageHash: string,
+    recipient:string,
+    amount:string,
+    paymentAmount: string,
+    wasmPath: string
+  ) {
+    const _packageHash = new CLByteArray(
+			Uint8Array.from(Buffer.from(packageHash, "hex"))
+		);
+    const _recipient = new CLByteArray(
+			Uint8Array.from(Buffer.from(recipient, "hex"))
+		);
+    const runtimeArgs = RuntimeArgs.fromMap({
+      entrypoint: CLValueBuilder.string(entrypointName),
+      package_hash: utils.createRecipientAddress(_packageHash),
+      recipient: utils.createRecipientAddress(_recipient),
+      amount: CLValueBuilder.u256(amount),
+    });
+
+    const deployHash = await installWasmFile({
+      chainName: this.chainName,
+      paymentAmount,
+      nodeAddress: this.nodeAddress,
+      keys,
+      pathToContract: wasmPath,
+      runtimeArgs,
+    });
+
+    if (deployHash !== null) {
+      return deployHash;
+    } else {
+      throw Error("Problem with installation");
+    }
+  }
+
+  public async transferFromSessionCode(
+    keys: Keys.AsymmetricKey,
+    entrypointName:string,
+    packageHash: string,
+    owner: RecipientType,
+    recipient:string,
+    amount:string,
+    paymentAmount: string,
+    wasmPath: string
+  ) {
+    const _packageHash = new CLByteArray(
+			Uint8Array.from(Buffer.from(packageHash, "hex"))
+		);
+    const _recipient = new CLByteArray(
+			Uint8Array.from(Buffer.from(recipient, "hex"))
+		);
+    const runtimeArgs = RuntimeArgs.fromMap({
+      entrypoint: CLValueBuilder.string(entrypointName),
+      package_hash: utils.createRecipientAddress(_packageHash),
+      owner: utils.createRecipientAddress(owner),
+      recipient: utils.createRecipientAddress(_recipient),
+      amount: CLValueBuilder.u256(amount),
+    });
+
+    const deployHash = await installWasmFile({
+      chainName: this.chainName,
+      paymentAmount,
+      nodeAddress: this.nodeAddress,
+      keys,
+      pathToContract: wasmPath,
+      runtimeArgs,
+    });
+
+    if (deployHash !== null) {
+      return deployHash;
+    } else {
+      throw Error("Problem with installation");
+    }
+  }
 
 
   public async setContractHash(hash: string) {
@@ -292,6 +369,33 @@ class ERC20CRVClient {
     }, {});
   }
 
+  public async name() {
+    const result = await contractSimpleGetter(
+      this.nodeAddress,
+      this.contractHash,
+      ["name"]
+    );
+    return result.value();
+  }
+
+  public async symbol() {
+    const result = await contractSimpleGetter(
+      this.nodeAddress,
+      this.contractHash,
+      ["symbol"]
+    );
+    return result.value();
+  }
+
+  public async decimals() {
+    const result = await contractSimpleGetter(
+      this.nodeAddress,
+      this.contractHash,
+      ["decimals"]
+    );
+    return result.value();
+  }
+
   public async balanceOf(account: string) {
     try {
       
@@ -307,6 +411,59 @@ class ERC20CRVClient {
       return "0";
     }
     
+  }
+
+  public async allowances(owner:string, spender:string) {
+    try {
+      const _spender = new CLByteArray(
+        Uint8Array.from(Buffer.from(spender, "hex"))
+      );
+
+      const _owner=new CLKey(new CLAccountHash(Uint8Array.from(Buffer.from(owner, "hex"))));
+      const key_spender = createRecipientAddress(_spender);
+      const finalBytes = concat([CLValueParsers.toBytes(_owner).unwrap(), CLValueParsers.toBytes(key_spender).unwrap()]);
+      const blaked = blake.blake2b(finalBytes, undefined, 32);
+      const encodedBytes = Buffer.from(blaked).toString("hex");
+
+      const result = await utils.contractDictionaryGetter(
+        this.nodeAddress,
+        encodedBytes,
+        this.namedKeys.allowances
+      );
+
+      const maybeValue = result.value().unwrap();
+      return maybeValue.value().toString();
+    } catch (error) {
+      return "0";
+    }
+
+  }
+
+  public async minter() {
+    const result = await contractSimpleGetter(
+      this.nodeAddress,
+      this.contractHash,
+      ["minter"]
+    );
+    return result.value();
+  }
+
+  public async admin() {
+    const result = await contractSimpleGetter(
+      this.nodeAddress,
+      this.contractHash,
+      ["admin"]
+    );
+    return result.value();
+  }
+
+  public async rate() {
+    const result = await contractSimpleGetter(
+      this.nodeAddress,
+      this.contractHash,
+      ["rate"]
+    );
+    return result.value();
   }
 
   //ERC20-CRV FUNCTIONS
@@ -389,106 +546,6 @@ class ERC20CRVClient {
     }
   }
 
-  // public async startEpochTimeWriteJsClient(
-  //   keys: Keys.AsymmetricKey,
-  //   paymentAmount: string
-  // ) {
-  //   const runtimeArgs = RuntimeArgs.fromMap({
-  //   });
-  //   const deployHash = await contractCall({
-  //     chainName: this.chainName,
-  //     contractHash: this.contractHash,
-  //     entryPoint: "start_epoch_time_write_js_client",
-  //     keys,
-  //     nodeAddress: this.nodeAddress,
-  //     paymentAmount,
-  //     runtimeArgs,
-  //   });
-
-  //   if (deployHash !== null) {
-      
-  //     return deployHash;
-  //   } else {
-  //     throw Error("Invalid Deploy");
-  //   }
-  // }
-
-  // public async futureEpochTimeWriteJsClient(
-  //   keys: Keys.AsymmetricKey,
-  //   paymentAmount: string
-  // ) {
-  //   const runtimeArgs = RuntimeArgs.fromMap({
-  //   });
-  //   const deployHash = await contractCall({
-  //     chainName: this.chainName,
-  //     contractHash: this.contractHash,
-  //     entryPoint: "future_epoch_time_write_js_client",
-  //     keys,
-  //     nodeAddress: this.nodeAddress,
-  //     paymentAmount,
-  //     runtimeArgs,
-  //   });
-
-  //   if (deployHash !== null) {
-      
-  //     return deployHash;
-  //   } else {
-  //     throw Error("Invalid Deploy");
-  //   }
-  // }
-
-  // public async availableSupplyJsClient(
-  //   keys: Keys.AsymmetricKey,
-  //   paymentAmount: string
-  // ) {
-  //   const runtimeArgs = RuntimeArgs.fromMap({
-  //   });
-  //   const deployHash = await contractCall({
-  //     chainName: this.chainName,
-  //     contractHash: this.contractHash,
-  //     entryPoint: "available_supply_js_client",
-  //     keys,
-  //     nodeAddress: this.nodeAddress,
-  //     paymentAmount,
-  //     runtimeArgs,
-  //   });
-
-  //   if (deployHash !== null) {
-      
-  //     return deployHash;
-  //   } else {
-  //     throw Error("Invalid Deploy");
-  //   }
-  // }
-
-  // public async mintableInTimeframeJsClient(
-  //   keys: Keys.AsymmetricKey,
-  //   start: string,
-  //   end:string,
-  //   paymentAmount: string
-  // ) {
-  //   const runtimeArgs = RuntimeArgs.fromMap({
-  //     start: CLValueBuilder.u256(start),
-  //     end: CLValueBuilder.u256(end),
-  //   });
-  //   const deployHash = await contractCall({
-  //     chainName: this.chainName,
-  //     contractHash: this.contractHash,
-  //     entryPoint: "mintable_in_timeframe_js_client",
-  //     keys,
-  //     nodeAddress: this.nodeAddress,
-  //     paymentAmount,
-  //     runtimeArgs,
-  //   });
-
-  //   if (deployHash !== null) {
-      
-  //     return deployHash;
-  //   } else {
-  //     throw Error("Invalid Deploy");
-  //   }
-  // }
-
   public async updateMiningParameters(
     keys: Keys.AsymmetricKey,
     paymentAmount: string
@@ -499,67 +556,6 @@ class ERC20CRVClient {
       chainName: this.chainName,
       contractHash: this.contractHash,
       entryPoint: "update_mining_parameters",
-      keys,
-      nodeAddress: this.nodeAddress,
-      paymentAmount,
-      runtimeArgs,
-    });
-
-    if (deployHash !== null) {
-      
-      return deployHash;
-    } else {
-      throw Error("Invalid Deploy");
-    }
-  }
-
-  public async mintJsClient(
-    keys: Keys.AsymmetricKey,
-    to: RecipientType,
-    amount: string,
-    paymentAmount: string
-  ) {
-    const runtimeArgs = RuntimeArgs.fromMap({
-      to: utils.createRecipientAddress(to),
-      amount: CLValueBuilder.u256(amount)
-    });
-    const deployHash = await contractCall({
-      chainName: this.chainName,
-      contractHash: this.contractHash,
-      entryPoint: "mint_js_client",
-      keys,
-      nodeAddress: this.nodeAddress,
-      paymentAmount,
-      runtimeArgs,
-    });
-
-    if (deployHash !== null) {
- 
-      return deployHash;
-    } else {
-      throw Error("Invalid Deploy");
-    }
-  }
-
-  public async transferFrom(
-    keys: Keys.AsymmetricKey,
-    owner: RecipientType,
-    recipient: string,
-    amount: string,
-    paymentAmount: string
-  ) {
-     const _recipient = new CLByteArray(
-			Uint8Array.from(Buffer.from(recipient, "hex"))
-		);
-    const runtimeArgs = RuntimeArgs.fromMap({
-      owner: utils.createRecipientAddress(owner),
-      recipient: utils.createRecipientAddress(_recipient),
-      amount: CLValueBuilder.u256(amount)
-    });
-    const deployHash = await contractCall({
-      chainName: this.chainName,
-      contractHash: this.contractHash,
-      entryPoint: "transfer_from",
       keys,
       nodeAddress: this.nodeAddress,
       paymentAmount,
@@ -592,37 +588,6 @@ class ERC20CRVClient {
       chainName: this.chainName,
       contractHash: this.contractHash,
       entryPoint: "approve",
-      keys,
-      nodeAddress: this.nodeAddress,
-      paymentAmount,
-      runtimeArgs,
-    });
-
-    if (deployHash !== null) {
-      
-      return deployHash;
-    } else {
-      throw Error("Invalid Deploy");
-    }
-  }
-
-  public async transfer(
-    keys: Keys.AsymmetricKey,
-    recipient: string,
-    amount: string,
-    paymentAmount: string
-  ) {
-     const _recipient = new CLByteArray(
-		 	Uint8Array.from(Buffer.from(recipient, "hex"))
-		 );
-    const runtimeArgs = RuntimeArgs.fromMap({
-      recipient: utils.createRecipientAddress(_recipient),
-      amount:CLValueBuilder.u256(amount), 
-    });
-    const deployHash = await contractCall({
-      chainName: this.chainName,
-      contractHash: this.contractHash,
-      entryPoint: "transfer",
       keys,
       nodeAddress: this.nodeAddress,
       paymentAmount,

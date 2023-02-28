@@ -115,6 +115,43 @@ export class VotingEscrowSessionCode {
   
   };
 
+  userPointHistoryTsSessionCode = async (idx: string) => {
+    const userPointHistoryTsSessionCodeDeployHash = await this.votingEscrow.userPointHistoryTsSessionCode(
+      KEYS,
+      "user_point_history_ts",
+      this.packageHash!,
+      KEYS.publicKey!,
+      idx!,
+      VOTING_ESCROW_INSTALL_PAYMENT_AMOUNT!,
+      VOTING_ESCROW_PROXY_WASM_PATH!
+    );
+  
+    console.log(`... userPointHistoryTsSessionCode Function deployHash: ${userPointHistoryTsSessionCodeDeployHash}`);
+  
+    await getDeploy(NODE_ADDRESS!, userPointHistoryTsSessionCodeDeployHash);
+  
+    console.log(`... userPointHistoryTsSessionCode Function called successfully through sessionCode.`);
+  
+  };
+
+  lockedEndSessionCode = async () => {
+    const lockedEndSessionCodeDeployHash = await this.votingEscrow.lockedEndSessionCode(
+      KEYS,
+      "locked_end",
+      this.packageHash!,
+      KEYS.publicKey!,
+      VOTING_ESCROW_INSTALL_PAYMENT_AMOUNT!,
+      VOTING_ESCROW_PROXY_WASM_PATH!
+    );
+  
+    console.log(`... lockedEndSessionCode Function deployHash: ${lockedEndSessionCodeDeployHash}`);
+  
+    await getDeploy(NODE_ADDRESS!, lockedEndSessionCodeDeployHash);
+  
+    console.log(`... lockedEndSessionCode Function called successfully through sessionCode.`);
+  
+  };
+
   balanceOfSessionCode = async (t:string) => {
     const balanceOfSessionCodeDeployHash = await this.votingEscrow.balanceOfSessionCode(
       KEYS,
@@ -137,7 +174,7 @@ export class VotingEscrowSessionCode {
   balanceOfATSessionCode = async (time:string) => {
     const balanceOfAtSessionCodeDeployHash = await this.votingEscrow.balanceOfAtSessionCode(
       KEYS,
-      "balance_of",
+      "balance_of_at",
       this.packageHash!,
       KEYS.publicKey!,
       time!,

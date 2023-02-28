@@ -48,22 +48,100 @@ export class VotingEscrowFunctions {
     );
   }
 
-  userPointHistoryTs =async (address:string, idx:string) => {
+  token =async () => {
     await this.votingEscrow.setContractHash(this.contractHash!);
-    const userPointHistoryTs = await this.votingEscrow.userPointHistoryTs(address!,idx!);
-    console.log(`... Contract userPointHistoryTs: ${userPointHistoryTs}`);
+    const token = await this.votingEscrow.token();
+    console.log(`... token: ${token}`);
   }
 
-  lockedEnd =async (address:string) => {
+  supply =async () => {
     await this.votingEscrow.setContractHash(this.contractHash!);
-    const lockedEnd = await this.votingEscrow.lockedEnd(address!);
-    console.log(`... Contract lockedEnd: ${lockedEnd}`);
+    const supply = await this.votingEscrow.supply();
+    console.log(`... supply: ${supply}`);
   }
 
-  unlockTime =async () => {
+  locked =async () => {
     await this.votingEscrow.setContractHash(this.contractHash!);
-    const unlockTime = await this.votingEscrow.unlockTime();
-    console.log(`... Contract unlockTime: ${unlockTime}`);
+    const locked = await this.votingEscrow.locked();
+    console.log(`... locked: ${locked}`);
+  }
+
+  epoch =async () => {
+    await this.votingEscrow.setContractHash(this.contractHash!);
+    const epoch = await this.votingEscrow.epoch();
+    console.log(`... epoch: ${epoch}`);
+  }
+
+  pointHistory =async (epoch: string) => {
+    await this.votingEscrow.setContractHash(this.contractHash!);
+    const pointHistory = await this.votingEscrow.pointHistory(epoch!);
+    console.log(`... pointHistory: ${pointHistory}`);
+  }
+
+  userPointHistory =async (user: string, epoch: string) => {
+    await this.votingEscrow.setContractHash(this.contractHash!);
+    const userPointHistory = await this.votingEscrow.userPointHistory(user!, epoch!);
+    console.log(`... userPointHistory: ${userPointHistory}`);
+  }
+
+  userPointEpoch =async (user: string) => {
+    await this.votingEscrow.setContractHash(this.contractHash!);
+    const userPointEpoch = await this.votingEscrow.userPointEpoch(user!);
+    console.log(`... userPointEpoch: ${userPointEpoch}`);
+  }
+
+  slopeChanges =async (time: string) => {
+    await this.votingEscrow.setContractHash(this.contractHash!);
+    const slopeChanges = await this.votingEscrow.slopeChanges(time!);
+    console.log(`... slopeChanges: ${slopeChanges}`);
+  }
+
+  controller =async () => {
+    await this.votingEscrow.setContractHash(this.contractHash!);
+    const controller = await this.votingEscrow.controller();
+    console.log(`... controller: ${controller}`);
+  }
+
+  transfersEnabled =async () => {
+    await this.votingEscrow.setContractHash(this.contractHash!);
+    const transfersEnabled = await this.votingEscrow.transfersEnabled();
+    console.log(`... transfersEnabled: ${transfersEnabled}`);
+  }
+
+  name =async () => {
+    await this.votingEscrow.setContractHash(this.contractHash!);
+    const name = await this.votingEscrow.name();
+    console.log(`... name: ${name}`);
+  }
+
+  symbol =async () => {
+    await this.votingEscrow.setContractHash(this.contractHash!);
+    const symbol = await this.votingEscrow.symbol();
+    console.log(`... symbol: ${symbol}`);
+  }
+
+  version =async () => {
+    await this.votingEscrow.setContractHash(this.contractHash!);
+    const version = await this.votingEscrow.version();
+    console.log(`... version: ${version}`);
+  }
+
+  decimals =async () => {
+    await this.votingEscrow.setContractHash(this.contractHash!);
+    const decimals = await this.votingEscrow.decimals();
+    console.log(`... decimals: ${decimals}`);
+  }
+
+  admin =async () => {
+    await this.votingEscrow.setContractHash(this.contractHash!);
+    const admin = await this.votingEscrow.admin();
+    console.log(`... admin: ${admin}`);
+  }
+
+  futureAdmin =async () => {
+    await this.votingEscrow.setContractHash(this.contractHash!);
+    const futureAdmin = await this.votingEscrow.futureAdmin();
+    console.log(`... futureAdmin: ${futureAdmin}`);
   }
 
   commitTransferOwnership =async () => {
@@ -104,11 +182,11 @@ export class VotingEscrowFunctions {
     console.log("... checkpoint function called successfully");
   }
 
-  depositFor =async (value:string) => {
+  depositFor =async (addr: string, value:string) => {
     await this.votingEscrow.setContractHash(this.contractHash!);
     const depositForDeployHash = await this.votingEscrow.depositFor(
       KEYS,
-      KEYS.publicKey!,
+      addr!,
       value!,
       VOTING_ESCROW_PAYMENT_AMOUNT!
     );

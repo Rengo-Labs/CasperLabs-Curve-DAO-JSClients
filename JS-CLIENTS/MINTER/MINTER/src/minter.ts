@@ -20,7 +20,7 @@ import {
 import { Some, None } from "ts-results";
 import * as blake from "blakejs";
 import { concat } from "@ethersproject/bytes";
-import { ERC20Events } from "./constants";
+import { MinterEvents } from "./constants";
 import * as utils from "./utils";
 import { RecipientType, IPendingDeploy } from "./types";
 import {createRecipientAddress } from "./utils";
@@ -319,9 +319,9 @@ const runtimeArgs = RuntimeArgs.fromMap({
   }
 
   public onEvent(
-    eventNames: ERC20Events[],
+    eventNames: MinterEvents[],
     callback: (
-      eventName: ERC20Events,
+      eventName: MinterEvents,
       deployStatus: {
         deployHash: string;
         success: boolean;
@@ -425,7 +425,7 @@ const runtimeArgs = RuntimeArgs.fromMap({
     };
   }
 
-  public addPendingDeploy(deployType: ERC20Events, deployHash: string) {
+  public addPendingDeploy(deployType: MinterEvents, deployHash: string) {
     this.pendingDeploys = [...this.pendingDeploys, { deployHash, deployType }];
   }
 }

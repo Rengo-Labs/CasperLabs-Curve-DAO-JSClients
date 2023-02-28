@@ -51,6 +51,54 @@ export class Erc20CrvFunctions {
     );
   }
 
+  name =async () => {
+    await this.erc20Crv.setContractHash(this.contractHash!);
+    const name = await this.erc20Crv.name();
+    console.log(`... name: ${name}`);
+  }
+
+  symbol =async () => {
+    await this.erc20Crv.setContractHash(this.contractHash!);
+    const symbol = await this.erc20Crv.symbol();
+    console.log(`... symbol: ${symbol}`);
+  }
+
+  decimals =async () => {
+    await this.erc20Crv.setContractHash(this.contractHash!);
+    const decimals = await this.erc20Crv.decimals();
+    console.log(`... decimals: ${decimals}`);
+  }
+
+  balanceOf =async () => {
+    await this.erc20Crv.setContractHash(this.contractHash!);
+    const balanceOf = await this.erc20Crv.balanceOf(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... balanceOf: ${balanceOf}`);
+  }
+
+  allowances =async (spender:string) => {
+    await this.erc20Crv.setContractHash(this.contractHash!);
+    const allowances = await this.erc20Crv.allowances(KEYS.publicKey.toAccountHashStr()!,spender!);
+    console.log(`... allowances: ${allowances}`);
+  }
+
+  minter =async () => {
+    await this.erc20Crv.setContractHash(this.contractHash!);
+    const minter = await this.erc20Crv.minter();
+    console.log(`... minter: ${minter}`);
+  }
+
+  admin =async () => {
+    await this.erc20Crv.setContractHash(this.contractHash!);
+    const admin = await this.erc20Crv.admin();
+    console.log(`... admin: ${admin}`);
+  }
+
+  rate =async () => {
+    await this.erc20Crv.setContractHash(this.contractHash!);
+    const rate = await this.erc20Crv.rate();
+    console.log(`... rate: ${rate}`);
+  }
+
   setMinter =async () => {
     await this.erc20Crv.setContractHash(this.contractHash!);
     const setMinterDeployHash = await this.erc20Crv.setMinter(
@@ -102,35 +150,6 @@ export class Erc20CrvFunctions {
      console.log("... updateMiningParameters function called successfully.");
   }
 
-  mint =async (amount:string) => {
-    await this.erc20Crv.setContractHash(this.contractHash!);
-    const mintJsClientDeployHash = await this.erc20Crv.mintJsClient(
-      KEYS!,
-      KEYS.publicKey,
-      amount!,
-      ERC20CRV_PAYMENT_AMOUNT!
-     );
-     console.log("... mintJsClient deploy hash: ", mintJsClientDeployHash);
-    
-     await getDeploy(NODE_ADDRESS!, mintJsClientDeployHash);
-     console.log("... mintJsClient function called successfully.");
-  }
-
-  transferFrom =async (recipient:string, amount:string) => {
-    await this.erc20Crv.setContractHash(this.contractHash!);
-    const transferFromDeployHash = await this.erc20Crv.transferFrom(
-      KEYS!,
-      KEYS.publicKey,
-      recipient!,
-      amount!,
-      ERC20CRV_PAYMENT_AMOUNT!
-     );
-     console.log("... transferFrom deploy hash: ", transferFromDeployHash);
-    
-     await getDeploy(NODE_ADDRESS!, transferFromDeployHash);
-     console.log("... transferFrom function called successfully.");
-  }
-
   approve =async (spender:string,amount:string) => {
     await this.erc20Crv.setContractHash(this.contractHash!);
     const approveDeployHash = await this.erc20Crv.approve(
@@ -143,20 +162,6 @@ export class Erc20CrvFunctions {
     
      await getDeploy(NODE_ADDRESS!, approveDeployHash);
      console.log("... approve function called successfully.");
-  }
-
-  transfer =async (recipient:string,amount:string) => {
-    await this.erc20Crv.setContractHash(this.contractHash!);
-    const transferDeployHash = await this.erc20Crv.transfer(
-      KEYS!,
-      recipient!,
-      amount!,
-      ERC20CRV_PAYMENT_AMOUNT!
-     );
-     console.log("... transfer deploy hash: ", transferDeployHash);
-    
-     await getDeploy(NODE_ADDRESS!, transferDeployHash);
-     console.log("... transfer function called successfully.");
   }
 
 

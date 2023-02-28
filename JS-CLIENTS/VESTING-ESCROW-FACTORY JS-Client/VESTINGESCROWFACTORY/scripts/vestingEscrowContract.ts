@@ -210,5 +210,88 @@ export class VestingEscrowFactorySessionCode {
     console.log(`... applyTransferOwnershipSessionCode Function called successfully through sessionCode.`);
   
   };
+
+  applyTransferOwnershipVefSessionCode = async () => {
+    const applyTransferOwnershipVefSessionCodeDeployHash = await this.vestingEscrowFactory.applyTransferOwnershipVefSessionCode(
+      KEYS,
+      "apply_transfer_ownership_vef",
+      this.packageHash!,
+      VESTING_ESCROW_FACTORY_INSTALL_PAYMENT_AMOUNT!,
+      VESTING_ESCROW_FACTORY_PROXY_WASM_PATH!
+    );
+  
+    console.log(`... applyTransferOwnershipVefSessionCode Function deployHash: ${applyTransferOwnershipVefSessionCodeDeployHash}`);
+  
+    await getDeploy(NODE_ADDRESS!, applyTransferOwnershipVefSessionCodeDeployHash);
+  
+    console.log(`... applyTransferOwnershipVefSessionCode Function called successfully through sessionCode.`);
+  
+  };
+
+  commitTransferOwnershipVefSessionCode = async (addr:string) => {
+    const commitTransferOwnershipVefSessionCodeDeployHash = await this.vestingEscrowFactory.commitTransferOwnershipVefSessionCode(
+      KEYS,
+      "commit_transfer_owership_vef",
+      this.packageHash!,
+      addr!,
+      VESTING_ESCROW_FACTORY_INSTALL_PAYMENT_AMOUNT!,
+      VESTING_ESCROW_FACTORY_PROXY_WASM_PATH!
+    );
+  
+    console.log(`... commitTransferOwnershipVefSessionCode Function deployHash: ${commitTransferOwnershipVefSessionCodeDeployHash}`);
+  
+    await getDeploy(NODE_ADDRESS!, commitTransferOwnershipVefSessionCodeDeployHash);
+  
+    console.log(`... commitTransferOwnershipVefSessionCode Function called successfully through sessionCode.`);
+  
+  };
+
+  deployVestingContractSessionCode = async (token:string,amount:string,duration:string,start:string) => {
+    const deployVestingContractSessionCodeDeployHash = await this.vestingEscrowFactory.deployVestingContractSessionCode(
+      KEYS,
+      "deploy_vesting_contract",
+      this.packageHash!,
+      token!,
+      KEYS.publicKey,
+      amount!,
+      true,
+      duration!,
+      start!,
+      VESTING_ESCROW_FACTORY_INSTALL_PAYMENT_AMOUNT!,
+      VESTING_ESCROW_FACTORY_PROXY_WASM_PATH!
+    );
+  
+    console.log(`... deployVestingContractSessionCode Function deployHash: ${deployVestingContractSessionCodeDeployHash}`);
+  
+    await getDeploy(NODE_ADDRESS!, deployVestingContractSessionCodeDeployHash);
+  
+    console.log(`... deployVestingContractSessionCode Function called successfully through sessionCode.`);
+  
+  };
+
+  initializeSessionCode = async (token:string,recipient:string,amount:string,startTime:string,endTime:string) => {
+    const initializeSessionCodeDeployHash = await this.vestingEscrowFactory.initializeSessionCode(
+      KEYS,
+      "initialize",
+      this.packageHash!,
+      KEYS.publicKey,
+      token!,
+      recipient!,
+      amount!,
+      startTime!,
+      endTime!,
+      true,
+      VESTING_ESCROW_FACTORY_INSTALL_PAYMENT_AMOUNT!,
+      VESTING_ESCROW_FACTORY_PROXY_WASM_PATH!
+    );
+  
+    console.log(`... initializeSessionCode Function deployHash: ${initializeSessionCodeDeployHash}`);
+  
+    await getDeploy(NODE_ADDRESS!, initializeSessionCodeDeployHash);
+  
+    console.log(`... initializeSessionCode Function called successfully through sessionCode.`);
+  
+  };
+  
 }
 

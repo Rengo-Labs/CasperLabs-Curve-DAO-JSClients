@@ -15,17 +15,122 @@
     "getLastUserSlopeSessionCode": "ts-node VOTINGESCROW/scripts/getLastUserSlopeSessionCode.ts",
     "increaseAmount": "ts-node VOTINGESCROW/scripts/increaseAmount.ts",
     "increaseUnlockTime": "ts-node VOTINGESCROW/scripts/increaseUnlockTime.ts",
-    "lockedEnd": "ts-node VOTINGESCROW/scripts/lockedEnd.ts",
     "totalSupplyAtSessionCode": "ts-node VOTINGESCROW/scripts/totalSupplyAtSessionCode.ts",
     "totalSupplySessionCode": "ts-node VOTINGESCROW/scripts/totalSupplySessionCode.ts",
-    "unlockTime": "ts-node VOTINGESCROW/scripts/unlockTime.ts",
-    "userPointHistoryTs": "ts-node VOTINGESCROW/scripts/userPointHistoryTs.ts",
-    "withdraw": "ts-node VOTINGESCROW/scripts/deployVotingEscrow.ts"
+    "withdraw": "ts-node VOTINGESCROW/scripts/deployVotingEscrow.ts",
+    "admin": "ts-node VOTINGESCROW/scripts/admin.ts",
+    "controller": "ts-node VOTINGESCROW/scripts/controller.ts",
+    "decimals": "ts-node VOTINGESCROW/scripts/decimals.ts",
+    "epoch": "ts-node VOTINGESCROW/scripts/epoch.ts",
+    "futureAdmin": "ts-node VOTINGESCROW/scripts/futureAdmin.ts",
+    "locked": "ts-node VOTINGESCROW/scripts/locked.ts",
+    "lockedEndSessionCode": "ts-node VOTINGESCROW/scripts/lockedEndSessionCode.ts",
+    "name": "ts-node VOTINGESCROW/scripts/name.ts",
+    "pointHistory": "ts-node VOTINGESCROW/scripts/pointHistory.ts",
+    "slopeChanges": "ts-node VOTINGESCROW/scripts/slopeChanges.ts",
+    "supply": "ts-node VOTINGESCROW/scripts/supply.ts",
+    "symbol": "ts-node VOTINGESCROW/scripts/symbol.ts",
+    "token": "ts-node VOTINGESCROW/scripts/token.ts",
+    "transfersEnabled": "ts-node VOTINGESCROW/scripts/transfersEnabled.ts",
+    "userPointEpoch": "ts-node VOTINGESCROW/scripts/userPointEpoch.ts",
+    "userPointHistory": "ts-node VOTINGESCROW/scripts/userPointHistory.ts",
+    "userPointHistoryTsSessionCode": "ts-node VOTINGESCROW/scripts/userPointHistoryTsSessionCode.ts",
+    "version": "ts-node VOTINGESCROW/scripts/version.ts"
   },
   "Script deployVotingEscrow comments": {
     "Description" : "use it to deploy VOTINGESCROW",
     "Syntax" : "npm run deployVotingEscrow <erc20PackageHash> <name> <symbol> <version>",
     "Example" : "npm run deployVotingEscrow 267c011232d1c8d113474b20047f2aabd8d0a704ca9b34dad62cd8372c7a4790 votingEscrow VE 1"
+  },
+  "Script version comments": {
+    "Description" : "use it to get version",
+    "Syntax" : "npm run version",
+    "Example" : "npm run version "
+  },
+  "Script userPointHistoryTsSessionCode comments": {
+    "Description" : "use it to get userPointHistoryTs through SessionCode ",
+    "Syntax" : "npm run userPointHistoryTsSessionCode <idx>",
+    "Example" : "npm run userPointHistoryTsSessionCode 123"
+  },
+  "Script userPointHistory comments": {
+    "Description" : "use it to get userPointHistory",
+    "Syntax" : "npm run userPointHistory <user> <epoch>",
+    "Example" : "npm run userPointHistory 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943 123"
+  },
+  "Script userPointEpoch comments": {
+    "Description" : "use it to get userPointEpoch",
+    "Syntax" : "npm run userPointEpoch <user> ",
+    "Example" : "npm run userPointEpoch 737588742efd608e68a1ae1bde3955d61e1d3f72b0e85f7755efe2f14363b943"
+  },
+  "Script transfersEnabled comments": {
+    "Description" : "use it to get transfersEnabled",
+    "Syntax" : "npm run transfersEnabled",
+    "Example" : "npm run transfersEnabled "
+  },
+  "Script token comments": {
+    "Description" : "use it to get token",
+    "Syntax" : "npm run token",
+    "Example" : "npm run token"
+  },
+  "Script symbol comments": {
+    "Description" : "use it to get symbol",
+    "Syntax" : "npm run symbol",
+    "Example" : "npm run symbol "
+  },
+  "Script supply comments": {
+    "Description" : "use it to get supply",
+    "Syntax" : "npm run supply",
+    "Example" : "npm run supply"
+  },
+  "Script slopeChanges comments": {
+    "Description" : "use it to get slopeChanges",
+    "Syntax" : "npm run slopeChanges <time> ",
+    "Example" : "npm run slopeChanges 123"
+  },
+  "Script pointHistory comments": {
+    "Description" : "use it to get pointHistory",
+    "Syntax" : "npm run pointHistory <epoch>",
+    "Example" : "npm run pointHistory 123"
+  },
+  "Script name comments": {
+    "Description" : "use it to get name",
+    "Syntax" : "npm run name",
+    "Example" : "npm run name "
+  },
+  "Script lockedEndSessionCode comments": {
+    "Description" : "use it to get lockedEnd through SessionCode ",
+    "Syntax" : "npm run lockedEndSessionCode",
+    "Example" : "npm run lockedEndSessionCode "
+  },
+  "Script locked comments": {
+    "Description" : "use it to get locked",
+    "Syntax" : "npm run locked",
+    "Example" : "npm run locked"
+  },
+  "Script futureAdmin comments": {
+    "Description" : "use it to get futureAdmin",
+    "Syntax" : "npm run futureAdmin",
+    "Example" : "npm run futureAdmin "
+  },
+  "Script epoch comments": {
+    "Description" : "use it to get epoch",
+    "Syntax" : "npm run epoch",
+    "Example" : "npm run epoch"
+  },
+  "Script decimals comments": {
+    "Description" : "use it to get decimals",
+    "Syntax" : "npm run decimals",
+    "Example" : "npm run decimals "
+  },
+  "Script controller comments": {
+    "Description" : "use it to get controller",
+    "Syntax" : "npm run controller",
+    "Example" : "npm run controller "
+  },
+  "Script admin comments": {
+    "Description" : "use it to get admin",
+    "Syntax" : "npm run admin",
+    "Example" : "npm run admin "
   },
   "Script applyTransferOwnership comments": {
     "Description" : "use it to apply TransferOwnership",
@@ -74,8 +179,8 @@
   },
   "Script increaseAmount comments": {
     "Description" : "use it to increase Amount",
-    "Syntax" : "npm run createlock <value>",
-    "Example" : "npm run createlock 1000"
+    "Syntax" : "npm run increaseAmount <value>",
+    "Example" : "npm run increaseAmount 1000"
   },
   "Script increaseUnlockTime comments": {
     "Description" : "use it to increase UnlockTime ",

@@ -77,10 +77,166 @@ export class LiquidityGaugeV3Functions {
     console.log(`... Contract integrateCheckpoint: ${integrateCheckpoint}`);
   }
 
-  claimedReward =async (addr:string, token:string) => {
+  minter =async () => {
     await this.liquidityGaugeV3.setContractHash(this.contractHash!);
-    const claimedReward = await this.liquidityGaugeV3.claimedReward(addr!, token!);
-    console.log(`... Contract claimedReward: ${claimedReward}`);
+    const minter = await this.liquidityGaugeV3.minter();
+    console.log(`... minter: ${minter}`);
+  }
+
+  crvToken =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const crvToken = await this.liquidityGaugeV3.crvToken();
+    console.log(`... crvToken: ${crvToken}`);
+  }
+
+  lpToken =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const lpToken = await this.liquidityGaugeV3.lpToken();
+    console.log(`... lpToken: ${lpToken}`);
+  }
+
+  controller =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const controller = await this.liquidityGaugeV3.controller();
+    console.log(`... controller: ${controller}`);
+  }
+
+  votingEscrow =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const votingEscrow = await this.liquidityGaugeV3.votingEscrow();
+    console.log(`... votingEscrow: ${votingEscrow}`);
+  }
+
+  futureEpochTime =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const futureEpochTime = await this.liquidityGaugeV3.futureEpochTime();
+    console.log(`... futureEpochTime: ${futureEpochTime}`);
+  }
+
+  balanceOf =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const balanceOf = await this.liquidityGaugeV3.balanceOf(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... balanceOf: ${balanceOf}`);
+  }
+
+  totalSupply =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const totalSupply = await this.liquidityGaugeV3.totalSupply();
+    console.log(`... totalSupply: ${totalSupply}`);
+  }
+
+  allowances =async (spender: string) => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const allowances = await this.liquidityGaugeV3.allowances(KEYS.publicKey.toAccountHashStr()!,spender!);
+    console.log(`... allowances: ${allowances}`);
+  }
+
+  name =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const name = await this.liquidityGaugeV3.name();
+    console.log(`... name: ${name}`);
+  }
+
+  symbol =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const symbol = await this.liquidityGaugeV3.symbol();
+    console.log(`... symbol: ${symbol}`);
+  }
+
+  workingBalances =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const workingBalances = await this.liquidityGaugeV3.workingBalances(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... workingBalances: ${workingBalances}`);
+  }
+
+  workingSupply =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const workingSupply = await this.liquidityGaugeV3.workingSupply();
+    console.log(`... workingSupply: ${workingSupply}`);
+  }
+
+  period =async (spender: string) => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const period = await this.liquidityGaugeV3.period();
+    console.log(`... period: ${period}`);
+  }
+
+  periodTimestamp =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const periodTimestamp = await this.liquidityGaugeV3.periodTimestamp(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... periodTimestamp: ${periodTimestamp}`);
+  }
+
+  integrateInvSupply =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const integrateInvSupply = await this.liquidityGaugeV3.integrateInvSupply(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... integrateInvSupply: ${integrateInvSupply}`);
+  }
+
+  integrateInvSupplyOf =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const integrateInvSupplyOf = await this.liquidityGaugeV3.integrateInvSupplyOf(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... integrateInvSupplyOf: ${integrateInvSupplyOf}`);
+  }
+
+  integrateCheckpointOf =async (spender: string) => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const integrateCheckpointOf = await this.liquidityGaugeV3.integrateCheckpointOf(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... integrateCheckpointOf: ${integrateCheckpointOf}`);
+  }
+
+  integrateFraction =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const integrateFraction = await this.liquidityGaugeV3.integrateFraction(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... integrateFraction: ${integrateFraction}`);
+  }
+
+  inflationRate =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const inflationRate = await this.liquidityGaugeV3.inflationRate();
+    console.log(`... inflationRate: ${inflationRate}`);
+  }
+
+  rewardTokens =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const rewardTokens = await this.liquidityGaugeV3.rewardTokens(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... rewardTokens: ${rewardTokens}`);
+  }
+
+  rewardsReceiver =async (spender: string) => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const rewardsReceiver = await this.liquidityGaugeV3.rewardsReceiver(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... rewardsReceiver: ${rewardsReceiver}`);
+  }
+
+  rewardIntegral =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const rewardIntegral = await this.liquidityGaugeV3.rewardIntegral(KEYS.publicKey.toAccountHashStr()!);
+    console.log(`... rewardIntegral: ${rewardIntegral}`);
+  }
+
+  rewardIntegralFor =async (spender:string) => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const rewardIntegralFor = await this.liquidityGaugeV3.rewardIntegralFor(KEYS.publicKey.toAccountHashStr()!,spender!);
+    console.log(`... rewardIntegralFor: ${rewardIntegralFor}`);
+  }
+
+  admin =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const admin = await this.liquidityGaugeV3.admin();
+    console.log(`... admin: ${admin}`);
+  }
+
+  futureAdmin =async (spender:string) => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const futureAdmin = await this.liquidityGaugeV3.futureAdmin();
+    console.log(`... futureAdmin: ${futureAdmin}`);
+  }
+
+  isKilled =async () => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const isKilled = await this.liquidityGaugeV3.isKilled();
+    console.log(`... isKilled: ${isKilled}`);
   }
 
   setRewardsReceiver=async (receiver:string) => {
@@ -94,6 +250,20 @@ export class LiquidityGaugeV3Functions {
     
      await getDeploy(NODE_ADDRESS!, setRewardsReceiverDeployHash);
      console.log("... setRewardsReceiver function called successfully.");
+  }
+
+  claimRewards=async (receiver:string) => {
+    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
+    const claimRewardsDeployHash = await this.liquidityGaugeV3.claimRewards(
+      KEYS!,
+      KEYS.publicKey,
+      receiver!,
+      LIQUIDITY_GAUGE_V3_PAYMENT_AMOUNT!
+     );
+     console.log("... claimRewards deploy hash: ", claimRewardsDeployHash);
+    
+     await getDeploy(NODE_ADDRESS!, claimRewardsDeployHash);
+     console.log("... claimRewards function called successfully.");
   }
 
   kick =async () => {
@@ -152,34 +322,6 @@ export class LiquidityGaugeV3Functions {
      console.log("... approve function called successfully.");
   }
 
-  increaseAllowance =async (spender:string, amount:string) => {
-    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
-    const increaseAllowanceDeployHash = await this.liquidityGaugeV3.increaseAllowance(
-      KEYS!,
-      spender!,
-      amount!,
-      LIQUIDITY_GAUGE_V3_PAYMENT_AMOUNT!
-     );
-     console.log("... increaseAllowance deploy hash: ", increaseAllowanceDeployHash);
-    
-     await getDeploy(NODE_ADDRESS!, increaseAllowanceDeployHash);
-     console.log("... increaseAllowance function called successfully.");
-  }
-
-  decreaseAllowance =async (spender:string,amount:string ) => {
-    await this.liquidityGaugeV3.setContractHash(this.contractHash!);
-    const decreaseAllowanceDeployHash = await this.liquidityGaugeV3.decreaseAllowance(
-      KEYS!,
-      spender!,
-      amount!,
-      LIQUIDITY_GAUGE_V3_PAYMENT_AMOUNT!
-     );
-     console.log("... decreaseAllowance deploy hash: ", decreaseAllowanceDeployHash);
-    
-     await getDeploy(NODE_ADDRESS!, decreaseAllowanceDeployHash);
-     console.log("... decreaseAllowance function called successfully.");
-  }
-
   setRewards =async (rewardContract:string,claimSig:string, rewardTokens:Array<string>) => {
     await this.liquidityGaugeV3.setContractHash(this.contractHash!);
     const setRewardsDeployHash = await this.liquidityGaugeV3.setRewards(
@@ -208,17 +350,17 @@ export class LiquidityGaugeV3Functions {
      console.log("... setKilled function called successfully.");
   }
 
-  comitTransferOwnership =async () => {
+  commitTransferOwnership =async () => {
     await this.liquidityGaugeV3.setContractHash(this.contractHash!);
-    const comitTransferOwnershipDeployHash = await this.liquidityGaugeV3.comitTransferOwnership(
+    const commitTransferOwnershipDeployHash = await this.liquidityGaugeV3.commitTransferOwnership(
       KEYS!,
       KEYS.publicKey,
       LIQUIDITY_GAUGE_V3_PAYMENT_AMOUNT!
      );
-     console.log("... comitTransferOwnership deploy hash: ", comitTransferOwnershipDeployHash);
+     console.log("... commitTransferOwnership deploy hash: ", commitTransferOwnershipDeployHash);
     
-     await getDeploy(NODE_ADDRESS!, comitTransferOwnershipDeployHash);
-     console.log("... comitTransferOwnership function called successfully.");
+     await getDeploy(NODE_ADDRESS!, commitTransferOwnershipDeployHash);
+     console.log("... commitTransferOwnership function called successfully.");
   }
 
   acceptTransferOwnership =async () => {
